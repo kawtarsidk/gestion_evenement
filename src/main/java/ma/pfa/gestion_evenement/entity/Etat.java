@@ -1,9 +1,11 @@
 package ma.pfa.gestion_evenement.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Etat {
+    @Id
     private String etatEvenement;
 
     public Etat() {
