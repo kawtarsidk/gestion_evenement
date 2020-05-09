@@ -14,6 +14,9 @@ public class Personne {
     private String mail;
     private String telephone;
 
+    @OneToOne(mappedBy = "personne", fetch = FetchType.EAGER)
+    private Compte compte;
+
     public Personne() {
     }
 
