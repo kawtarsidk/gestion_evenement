@@ -7,17 +7,10 @@ import java.util.List;
 
 @Entity
 public class Organisateur extends Personne{
-@OneToMany(mappedBy = "organisateur", fetch = FetchType.EAGER)
-    private List<Evenement> evenements;
 
-    public Organisateur() {
-    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "organisateur")
+    private List<Evenement> evenement;
 
-    public List<Evenement> getEvenements() {
-        return evenements;
-    }
 
-    public void setEvenements(List<Evenement> evenements) {
-        this.evenements = evenements;
-    }
+
 }
