@@ -10,7 +10,6 @@ public class Evenement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="titre")
     private String titre;
 
     @Temporal(TemporalType.DATE)
@@ -19,19 +18,14 @@ public class Evenement {
     @Temporal(TemporalType.DATE)
     private Date datefin;
 
-    @Column(name="theme")
     private String theme;
 
-    @Column(name="nbrparticipant")
     private int nbrParticipant;
 
-    @Column(name="tobjectif")
     private String objectif;
 
-    @Column(name="public")
     private String publicConcerne;
 
-    @Column(name="details")
     private String details;
 
     @ManyToOne(fetch = FetchType.EAGER)
