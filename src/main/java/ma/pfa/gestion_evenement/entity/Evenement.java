@@ -2,6 +2,7 @@ package ma.pfa.gestion_evenement.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Evenement {
@@ -32,6 +33,7 @@ public class Evenement {
 
     @Column(name="details")
     private String details;
+
 
 
     public Evenement() {
@@ -100,4 +102,11 @@ public class Evenement {
     public void setDetails(String details) {
         this.details = details;
     }
+    @ManyToOne
+    @JoinColumn(name = "etat" , referencedColumnName = "id", insertable = false, updatable = false)
+    private Etat etat;
+
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
+    private List<Photos> photos;
+
 }

@@ -11,6 +11,5 @@ public class Compte  {
     private String password;
     private String privilege;
 
-    @OneToOne(mappedBy = "compte", fetch = FetchType.EAGER)
-   private Personne personne;
+
 }
