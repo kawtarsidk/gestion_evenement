@@ -33,6 +33,9 @@ public class Evenement {
     @Column(name="details")
     private String details;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "evenement")
+    private Organisateur organisateur;
 
     public Evenement() {
     }
