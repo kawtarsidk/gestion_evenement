@@ -1,18 +1,19 @@
 package ma.pfa.gestion_evenement.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class equipement {
+public class Equipement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
 
-    public equipement() {
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "type")
+    private Type type;
+
+    public Equipement() {
     }
 
     public String getNom() {
