@@ -105,7 +105,7 @@ public class Evenement {
     public void setDetails(String details) {
         this.details = details;
     }
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "etat" , referencedColumnName = "id", insertable = false, updatable = false)
     private Etat etat;
 

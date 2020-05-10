@@ -1,15 +1,12 @@
 package ma.pfa.gestion_evenement.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Photos {
     @Id
 private String photo;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "event")
     private  Evenement evenement;
 }
