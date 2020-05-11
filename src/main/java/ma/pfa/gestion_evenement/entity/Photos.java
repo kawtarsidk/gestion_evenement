@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Photos {
     @Id
+    private int id;
     private String photo;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "evenement_id", referencedColumnName = "id", insertable = false, updatable = false)
