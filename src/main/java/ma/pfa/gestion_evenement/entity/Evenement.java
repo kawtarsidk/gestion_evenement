@@ -54,6 +54,11 @@ public class Evenement {
                             nullable = false, updatable = false)})
     private Set<Equipement> equipement = new HashSet<>();
 
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
+    private List<Budget> Budget;
+
+
+
 
     public Evenement() {
     }
