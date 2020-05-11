@@ -11,7 +11,7 @@ public class Budget {
     private BudgetID id;
     @ManyToOne
     @JoinColumn(name ="Sponsors", referencedColumnName = "id",insertable = false, updatable = false)
-    private Salle salle;
+    private Sponsors sponsors;
     @ManyToOne
     @JoinColumn(name ="evenement", referencedColumnName = "id",insertable = false, updatable = false)
     private Evenement evenement;
@@ -19,9 +19,8 @@ public class Budget {
     public Budget() {
     }
 
-    public Budget(BudgetID id, Salle salle, Evenement evenement) {
-        this.id = id;
-        this.salle = salle;
+    public Budget(Sponsors sponsors, Evenement evenement) {
+        this.sponsors = sponsors;
         this.evenement = evenement;
     }
 }
