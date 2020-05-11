@@ -6,6 +6,7 @@ import java.util.List;
 @Entity
 public class Type {
     @Id
+    private int id;
     private String type;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "type")
