@@ -16,7 +16,7 @@ public class Equipement {
     @JoinColumn(name = "type")
     private Type type;
 
-    @ManyToMany(mappedBy = "courses", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "equipement", fetch = FetchType.EAGER)
     private Set<Evenement> evenement = new HashSet<>();
 
     public Equipement() {
