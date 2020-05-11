@@ -1,9 +1,7 @@
 package ma.pfa.gestion_evenement.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Salle {
@@ -11,8 +9,12 @@ public class Salle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
-    private int bnrPlace;
+    private int nbrPlace;
     private boolean disponibilite;
+
+    @OneToMany(mappedBy = "salle")
+    private List<InfoSalle> infoSalles;
+
 
     public Salle() {
     }
@@ -22,7 +24,7 @@ public class Salle {
     }
 
     public int getBnrPlace() {
-        return bnrPlace;
+        return nbrPlace;
     }
 
     public boolean isDisponibilite() {
@@ -34,7 +36,7 @@ public class Salle {
     }
 
     public void setBnrPlace(int bnrPlace) {
-        this.bnrPlace = bnrPlace;
+        this.nbrPlace = bnrPlace;
     }
 
     public void setDisponibilite(boolean disponibilite) {

@@ -29,7 +29,7 @@ public class Evenement {
     private String details;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "organisateurId")
+    @JoinColumn(name = "organisateur_id",referencedColumnName = "id", insertable = false, updatable = false)
     private Organisateur organisateur;
 
 
@@ -109,6 +109,9 @@ public class Evenement {
 
     @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
     private List<InfosParticipation> infosParticipations;
+
+    @OneToMany(mappedBy = "evenement")
+    private List<InfoSalle> infoSalles;
 
 }
 
