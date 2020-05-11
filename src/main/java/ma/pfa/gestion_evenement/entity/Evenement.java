@@ -2,7 +2,9 @@ package ma.pfa.gestion_evenement.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Evenement {
@@ -31,6 +33,26 @@ public class Evenement {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "organisateurId")
     private Organisateur organisateur;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "etat_id" , referencedColumnName = "id", insertable = false, updatable = false)
+    private Etat etat;
+
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
+    private List<Photos> photos;
+
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
+    private List<InfosParticipation> infosParticipations;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "InfoEquipement",
+            joinColumns = {
+                    @JoinColumn(name = "evenement_id", referencedColumnName = "id",
+                            nullable = false, updatable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "equipement_id", referencedColumnName = "id",
+                            nullable = false, updatable = false)})
+    private Set<Equipement> equipement = new HashSet<>();
 
 
     public Evenement() {
@@ -100,15 +122,7 @@ public class Evenement {
         this.details = details;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "etat_id" , referencedColumnName = "id", insertable = false, updatable = false)
-    private Etat etat;
 
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
-    private List<Photos> photos;
-
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
-    private List<InfosParticipation> infosParticipations;
 
 }
 
