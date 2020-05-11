@@ -12,11 +12,11 @@ public class Equipement {
     private int id;
     private String nom;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "type", referencedColumnName = "id", insertable = false, updatable = false)
     private Type type;
 
-    @ManyToMany(mappedBy = "equipement", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "equipement", fetch = FetchType.LAZY)
     private List<Evenement> evenement;
 
     public Equipement() {

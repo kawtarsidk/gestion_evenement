@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class Organisateur extends Personne{
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "organisateur")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "organisateur")
     private List<Evenement> evenement;
 
     public Organisateur() {

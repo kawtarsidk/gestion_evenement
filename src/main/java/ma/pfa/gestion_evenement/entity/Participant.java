@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class Participant extends Personne{
 
-    @OneToMany(mappedBy = "participant", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "participant", fetch = FetchType.LAZY)
     private List<InfosParticipation> infosParticipations;
 
     public Participant() {

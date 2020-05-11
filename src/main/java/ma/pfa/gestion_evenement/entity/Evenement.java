@@ -25,21 +25,21 @@ public class Evenement {
     private String publicConcerne;
     private String details;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "organisateur_id",referencedColumnName = "id", insertable = false, updatable = false)
     private Organisateur organisateur;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "etat_id" , referencedColumnName = "id", insertable = false, updatable = false)
     private Etat etat;
 
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
     private List<Photos> photos;
 
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
     private List<InfosParticipation> infosParticipations;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinTable(name = "InfoEquipement",
             joinColumns = {
                     @JoinColumn(name = "evenement_id", referencedColumnName = "id",
@@ -49,7 +49,7 @@ public class Evenement {
                             nullable = false, updatable = false)})
     private List<Equipement> equipement;
 
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
     private List<Budget> Budget;
 
     @OneToMany(mappedBy = "evenement")

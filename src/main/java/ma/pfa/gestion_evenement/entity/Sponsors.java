@@ -9,7 +9,7 @@ public class Sponsors {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
-    @OneToMany(mappedBy = "sponsors",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sponsors",fetch = FetchType.LAZY)
     private List<Budget> Budget;
 
     public Sponsors() {
