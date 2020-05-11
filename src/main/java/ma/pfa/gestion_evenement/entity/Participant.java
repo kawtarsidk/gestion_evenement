@@ -7,8 +7,14 @@ import java.util.List;
 
 @Entity
 public class Participant extends Personne{
+
+    @OneToMany(mappedBy = "participant", fetch = FetchType.EAGER)
+    private List<InfosParticipation> infosParticipations;
+
     public Participant() {
     }
-    @OneToMany(mappedBy = "participant", fetch = FetchType.LAZY)
-    private List<InfosParticipation> infosParticipations;
+
+    public Participant(String cin, String nom, String prenom, String mail, String telephone, Compte compte) {
+        super(cin, nom, prenom, mail, telephone, compte);
+    }
 }

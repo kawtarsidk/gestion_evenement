@@ -4,4 +4,12 @@ import javax.persistence.Entity;
 
 @Entity
 public class Directeur extends Personne {
+
+    public Directeur() {
+    }
+
+    public Directeur(String cin, String nom, String prenom, String mail, String telephone, Compte compte) {
+        super(cin, nom, prenom, mail, telephone, compte);
+    }
+
 }

@@ -12,4 +12,8 @@ public class InfosSalleID implements Serializable {
     public InfosSalleID() {
     }
 
+    public InfosSalleID(int evenement, int nbPlaces) {
+        this.evenement = evenement;
+        this.nbPlaces = nbPlaces;
+    }
 }

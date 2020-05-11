@@ -20,10 +20,16 @@ public class Personne {
     public Personne() {
     }
 
-    public int getId() {
-
-        return id;
+    public Personne(String cin, String nom, String prenom, String mail, String telephone, Compte compte) {
+        this.cin = cin;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.mail = mail;
+        this.telephone = telephone;
+        this.compte = compte;
     }
+
+    public int getId() { return id; }
 
     public String getCin() {
         return cin;

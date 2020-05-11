@@ -13,10 +13,16 @@ public class Salle {
     private boolean disponibilite;
 
     @OneToMany(mappedBy = "salle")
-    private List<InfoSalle> infoSalles;
-
+    private List<InfoSalle> infoSalle;
 
     public Salle() {
+    }
+
+    public Salle(String nom, int nbrPlace, boolean disponibilite, List<InfoSalle> infoSalle) {
+        this.nom = nom;
+        this.nbrPlace = nbrPlace;
+        this.disponibilite = disponibilite;
+        this.infoSalle = infoSalle;
     }
 
     public String getNom() {

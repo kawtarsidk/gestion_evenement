@@ -13,10 +13,15 @@ public class InfosParticipation  {
     @ManyToOne
     @JoinColumn(name = "evenement_id", referencedColumnName = "id", insertable = false, updatable = false)
     private  Evenement evenement;
-   @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "participant_id", referencedColumnName = "id", insertable = false, updatable = false)
     private  Participant participant;
 
     public InfosParticipation() {
+    }
+
+    public InfosParticipation(Evenement evenement, Participant participant) {
+        this.evenement = evenement;
+        this.participant = participant;
     }
 }

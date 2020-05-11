@@ -10,11 +10,15 @@ public class Etat {
     @Id
     private String etatEvenement;
 
+    @OneToMany(mappedBy = "etat")
+    private List<Evenement> evenement;
+
     public Etat() {
     }
 
-    @OneToMany(mappedBy = "etat")
-    private List<Evenement> evenements;
+    public Etat(String etatEvenement) {
+        this.etatEvenement = etatEvenement;
+    }
 
     public String getEtatEvenement() {
         return etatEvenement;
@@ -23,4 +27,6 @@ public class Etat {
     public void setEtatEvenement(String etatEvenement) {
         this.etatEvenement = etatEvenement;
     }
+
+
 }

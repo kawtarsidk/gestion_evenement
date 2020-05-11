@@ -11,7 +11,12 @@ public class InfosPaticipationID implements Serializable {
     private Date dateInscription;
     private  boolean presence;
 
-
     public InfosPaticipationID() {
+    }
+
+    public InfosPaticipationID(int patricipant, Date dateInscription, boolean presence) {
+        this.patricipant = patricipant;
+        this.dateInscription = dateInscription;
+        this.presence = presence;
     }
 }

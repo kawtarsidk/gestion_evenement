@@ -13,13 +13,18 @@ public class Equipement {
     private String nom;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "type")
+    @JoinColumn(name = "type", referencedColumnName = "id", insertable = false, updatable = false)
     private Type type;
 
     @ManyToMany(mappedBy = "equipement", fetch = FetchType.EAGER)
-    private Set<Evenement> evenement = new HashSet<>();
+    private List<Evenement> evenement;
 
     public Equipement() {
+    }
+
+    public Equipement(String nom, Type type) {
+        this.nom = nom;
+        this.type = type;
     }
 
     public String getNom() {
@@ -29,4 +34,6 @@ public class Equipement {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+
 }

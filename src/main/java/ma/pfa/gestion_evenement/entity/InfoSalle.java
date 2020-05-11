@@ -12,8 +12,11 @@ public class InfoSalle {
     @ManyToOne
     @JoinColumn(name ="salle", referencedColumnName = "id",insertable = false, updatable = false)
     private Salle salle;
-   @ManyToOne
+    @ManyToOne
     @JoinColumn(name ="evenement", referencedColumnName = "id",insertable = false, updatable = false)
     private Evenement evenement;
+
+    public InfoSalle() {
+    }
 
 }

@@ -11,7 +11,6 @@ public class Evenement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String titre;
 
     @Temporal(TemporalType.DATE)
@@ -21,13 +20,9 @@ public class Evenement {
     private Date datefin;
 
     private String theme;
-
     private int nbrParticipant;
-
     private String objectif;
-
     private String publicConcerne;
-
     private String details;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -38,10 +33,10 @@ public class Evenement {
     @JoinColumn(name = "etat_id" , referencedColumnName = "id", insertable = false, updatable = false)
     private Etat etat;
 
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.EAGER)
     private List<Photos> photos;
 
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.EAGER)
     private List<InfosParticipation> infosParticipations;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
@@ -52,11 +47,13 @@ public class Evenement {
             inverseJoinColumns = {
                     @JoinColumn(name = "equipement_id", referencedColumnName = "id",
                             nullable = false, updatable = false)})
-    private Set<Equipement> equipement = new HashSet<>();
+    private List<Equipement> equipement;
 
     @OneToMany(mappedBy = "evenement",fetch = FetchType.EAGER)
     private List<Budget> Budget;
 
+    @OneToMany(mappedBy = "evenement")
+    private List<InfoSalle> infoSalle;
 
 
 
@@ -129,8 +126,7 @@ public class Evenement {
 
 
 
-    @OneToMany(mappedBy = "evenement")
-    private List<InfoSalle> infoSalles;
+
 
 }
 
