@@ -1,6 +1,9 @@
 package ma.pfa.gestion_evenement.entity;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Equipement {
@@ -12,6 +15,9 @@ public class Equipement {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "type")
     private Type type;
+
+    @ManyToMany(mappedBy = "courses", fetch = FetchType.EAGER)
+    private Set<Evenement> evenement = new HashSet<>();
 
     public Equipement() {
     }
