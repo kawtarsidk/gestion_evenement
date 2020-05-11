@@ -7,6 +7,6 @@ public class Photos {
     @Id
 private String photo;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "event")
+    @JoinColumn(name = "evenement_id")
     private  Evenement evenement;
 }

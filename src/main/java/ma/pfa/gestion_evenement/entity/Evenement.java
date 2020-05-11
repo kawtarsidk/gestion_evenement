@@ -99,11 +99,16 @@ public class Evenement {
     public void setDetails(String details) {
         this.details = details;
     }
+
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "etat" , referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "etat_id" , referencedColumnName = "id", insertable = false, updatable = false)
     private Etat etat;
 
     @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
     private List<Photos> photos;
 
+    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
+    private List<InfosParticipation> infosParticipations;
+
 }
+
