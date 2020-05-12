@@ -1,9 +1,7 @@
 package ma.pfa.gestion_evenement.entity;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Equipement {
@@ -17,7 +15,7 @@ public class Equipement {
     private Type type;
 
     @ManyToMany(mappedBy = "equipement", fetch = FetchType.LAZY)
-    private List<Evenement> evenement;
+    private List<Compte> evenement;
 
     public Equipement() {
     }

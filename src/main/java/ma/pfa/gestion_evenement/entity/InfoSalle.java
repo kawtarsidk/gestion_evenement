@@ -14,7 +14,7 @@ public class InfoSalle {
     private Salle salle;
     @ManyToOne
     @JoinColumn(name ="evenement", referencedColumnName = "id",insertable = false, updatable = false)
-    private Evenement evenement;
+    private Compte evenement;
 
     public InfoSalle() {
     }

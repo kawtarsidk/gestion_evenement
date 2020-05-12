@@ -12,7 +12,7 @@ public class InfosParticipation  {
     private InfosPaticipationID id;
     @ManyToOne
     @JoinColumn(name = "evenement_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private  Evenement evenement;
+    private Compte evenement;
     @ManyToOne
     @JoinColumn(name = "participant_id", referencedColumnName = "id", insertable = false, updatable = false)
     private  Participant participant;
@@ -20,7 +20,7 @@ public class InfosParticipation  {
     public InfosParticipation() {
     }
 
-    public InfosParticipation(Evenement evenement, Participant participant) {
+    public InfosParticipation(Compte evenement, Participant participant) {
         this.evenement = evenement;
         this.participant = participant;
     }

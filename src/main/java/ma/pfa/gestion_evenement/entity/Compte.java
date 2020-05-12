@@ -3,7 +3,7 @@ package ma.pfa.gestion_evenement.entity;
 import javax.persistence.*;
 
 @Entity
-public class Compte  {
+public class Compte {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
