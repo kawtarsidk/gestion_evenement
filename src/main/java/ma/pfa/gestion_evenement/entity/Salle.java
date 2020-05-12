@@ -7,7 +7,7 @@ import java.util.List;
 public class Salle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nom;
     private int nbrPlace;
     private boolean disponibilite;
@@ -24,6 +24,8 @@ public class Salle {
         this.disponibilite = disponibilite;
         this.infoSalle = infoSalle;
     }
+
+    public Long getId() { return id; }
 
     public String getNom() {
         return nom;

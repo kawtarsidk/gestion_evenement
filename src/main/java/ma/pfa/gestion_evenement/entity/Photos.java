@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Photos {
     @Id
-    private int id;
+    private Long id;
     private String photo;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "evenement_id", referencedColumnName = "id", insertable = false, updatable = false)
@@ -21,6 +21,8 @@ public class Photos {
 
     public Photos() {
     }
+
+    public Long getId() { return id; }
 
     public Photos(String photo) {
         this.photo = photo;

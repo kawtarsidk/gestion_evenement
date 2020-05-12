@@ -7,7 +7,7 @@ import java.util.List;
 public class Equipement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nom;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -24,6 +24,8 @@ public class Equipement {
         this.nom = nom;
         this.type = type;
     }
+
+    public Long getId() { return id; }
 
     public String getNom() {
         return nom;

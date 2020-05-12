@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Personne {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private  String cin;
     private String nom;
     private String prenom;
@@ -29,7 +29,7 @@ public class Personne {
         this.compte = compte;
     }
 
-    public int getId() { return id; }
+    public Long getId() { return id; }
 
     public String getCin() {
         return cin;

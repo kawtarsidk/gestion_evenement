@@ -8,7 +8,7 @@ import java.util.List;
 public class Evenement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String titre;
 
     @Temporal(TemporalType.DATE)
@@ -57,6 +57,26 @@ public class Evenement {
 
     public Evenement() {
     }
+
+    public Evenement(String titre, Date datedebut, Date datefin, String theme, int nbrParticipant, String objectif, String publicConcerne, String details, Organisateur organisateur, Etat etat, List<Photos> photos, List<InfosParticipation> infosParticipations, List<Equipement> equipement, List<Budget> budget, List<InfoSalle> infoSalle) {
+        this.titre = titre;
+        this.datedebut = datedebut;
+        this.datefin = datefin;
+        this.theme = theme;
+        this.nbrParticipant = nbrParticipant;
+        this.objectif = objectif;
+        this.publicConcerne = publicConcerne;
+        this.details = details;
+        this.organisateur = organisateur;
+        this.etat = etat;
+        this.photos = photos;
+        this.infosParticipations = infosParticipations;
+        this.equipement = equipement;
+        this.Budget = budget;
+        this.infoSalle = infoSalle;
+    }
+
+    public Evenement(Long id) { this.id = id; }
 
     public String getTitre() {
         return titre;

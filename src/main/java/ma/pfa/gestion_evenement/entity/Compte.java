@@ -9,7 +9,7 @@ public class Compte {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
-    private int id;
+    private Long id;
     private String login;
     private String password;
     private String privilege;
@@ -28,7 +28,7 @@ public class Compte {
         this.personne = personne;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

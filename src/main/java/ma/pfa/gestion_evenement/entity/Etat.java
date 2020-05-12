@@ -7,7 +7,7 @@ import java.util.List;
 public class Etat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String etatEvenement;
 
     @OneToMany(mappedBy = "etat")
@@ -19,6 +19,8 @@ public class Etat {
     public Etat(String etatEvenement) {
         this.etatEvenement = etatEvenement;
     }
+
+    public Long getId() { return id; }
 
     public String getEtatEvenement() {
         return etatEvenement;

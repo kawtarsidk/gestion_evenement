@@ -26,9 +26,8 @@ public class CompteController{
     }
 
     @DeleteMapping("/deleteAccount/{id}")
-    public void delete(@PathVariable("id")  Integer id){
+    public void delete(@PathVariable("id") Long id){
         compteRepository.deleteById(id);
-
     }
 
     @PutMapping("/update")
