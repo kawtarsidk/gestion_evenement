@@ -14,6 +14,7 @@ import java.util.List;
         private EquipementRepository equipementRepository;
 
         @PostMapping("/saveEquip")
+
         public void save(@RequestBody Evenement equipement){
             equipementRepository.save(equipement);
         }
@@ -23,13 +24,13 @@ import java.util.List;
         }
 
         @DeleteMapping("/deleteEquip/{id}")
-    public boolean delete(@PathVariable int id){
+        public boolean delete(@PathVariable int id){
         equipementRepository.deleteById(id);
         return true;
     }
 
-    @PutMapping("/updateEquip")
-    public void update(@RequestBody Evenement equipement){
+        @PutMapping("/updateEquip")
+        public void update(@RequestBody Evenement equipement){
         equipementRepository.save(equipement);
     }
 }

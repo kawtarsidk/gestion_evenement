@@ -16,6 +16,7 @@ public class EventController {
         public void save(@RequestBody Compte evenement){
             eventRepository.save(evenement);
         }
+
         @GetMapping("/getEvents")
         public List<Compte> findAll() {
             return eventRepository.findAll();

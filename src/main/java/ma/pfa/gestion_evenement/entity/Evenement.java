@@ -45,7 +45,7 @@ public class Evenement {
             inverseJoinColumns = {
                     @JoinColumn(name = "equipement_id", referencedColumnName = "id",
                             nullable = false, updatable = false)})
-    private List<Evenement> equipement;
+    private List<Equipement> equipement;
 
     @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
     private List<Budget> Budget;

@@ -18,6 +18,7 @@ public class SalleController {
     public void save(@RequestBody Salle salle){
         salleRepository.save(salle);
     }
+
     @GetMapping("/getsalles")
     public List<Salle> findAll() {
         return salleRepository.findAll();

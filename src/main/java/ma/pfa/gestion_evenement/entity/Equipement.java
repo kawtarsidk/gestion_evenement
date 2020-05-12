@@ -15,7 +15,7 @@ public class Equipement {
     private Type type;
 
     @ManyToMany(mappedBy = "equipement", fetch = FetchType.LAZY)
-    private List<Compte> evenement;
+    private List<Evenement> evenement;
 
     public Equipement() {
     }
