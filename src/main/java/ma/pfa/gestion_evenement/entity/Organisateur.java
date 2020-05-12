@@ -9,7 +9,7 @@ import java.util.List;
 public class Organisateur extends Personne{
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "organisateur")
-    private List<Evenement> evenement;
+    private List<Compte> evenement;
 
     public Organisateur() {
     }

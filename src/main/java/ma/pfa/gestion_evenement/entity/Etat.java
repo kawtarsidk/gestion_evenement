@@ -11,7 +11,7 @@ public class Etat {
     private String etatEvenement;
 
     @OneToMany(mappedBy = "etat")
-    private List<Evenement> evenement;
+    private List<Compte> evenement;
 
     public Etat() {
     }

@@ -9,7 +9,7 @@ public class Photos {
     private String photo;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "evenement_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private  Evenement evenement;
+    private Compte evenement;
 
     public String getPhoto() {
         return photo;

@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.ScriptAssert;
 import javax.persistence.*;
 
 @Entity
-public class Compte  {
+public class Compte {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)

@@ -2,9 +2,7 @@ package ma.pfa.gestion_evenement.entity;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Evenement {
@@ -47,7 +45,7 @@ public class Evenement {
             inverseJoinColumns = {
                     @JoinColumn(name = "equipement_id", referencedColumnName = "id",
                             nullable = false, updatable = false)})
-    private List<Equipement> equipement;
+    private List<Evenement> equipement;
 
     @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
     private List<Budget> Budget;

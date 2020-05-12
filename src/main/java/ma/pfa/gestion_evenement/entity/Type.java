@@ -11,7 +11,7 @@ public class Type {
     private String type;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "type")
-    private List<Equipement> equipement;
+    private List<Evenement> equipement;
 
     public Type() {
     }
