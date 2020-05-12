@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Compte  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
     private String login;
     private String password;
     private String privilege;
