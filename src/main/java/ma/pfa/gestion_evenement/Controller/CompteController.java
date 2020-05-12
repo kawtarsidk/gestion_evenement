@@ -25,8 +25,13 @@ public class CompteController{
     }
 
     @DeleteMapping("/deleteAccount/{id}")
-    public void delete(@PathVariable(required = true)  String id){
-        Compte c = compteRepository.findById(Integer.parseInt(id));
-        compteRepository.delete(c);
+    public boolean delete(@PathVariable int id){
+        compteRepository.deleteById(id);
+        return true;
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody Compte compte){
+        compteRepository.save(compte);
     }
 }

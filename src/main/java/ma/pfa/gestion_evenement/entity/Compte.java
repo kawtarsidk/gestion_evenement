@@ -5,8 +5,9 @@ import javax.persistence.*;
 @Entity
 public class Compte  {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, nullable = false)
+    private int id;
     private String login;
     private String password;
     private String privilege;
