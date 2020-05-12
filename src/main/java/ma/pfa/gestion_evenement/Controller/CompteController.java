@@ -24,10 +24,14 @@ public class CompteController{
         return compteRepository.findAll();
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable (required = true) String id){
-       Compte s = compteRepository.findById(Integer.parseInt(id));
-        compteRepository.delete(s);
+    @DeleteMapping("/deleteAccount/{id}")
+    public boolean delete(@PathVariable int id){
+        compteRepository.deleteById(id);
+        return true;
     }
 
+    @PutMapping("/update")
+    public void update(@RequestBody Compte compte){
+        compteRepository.save(compte);
+    }
 }
