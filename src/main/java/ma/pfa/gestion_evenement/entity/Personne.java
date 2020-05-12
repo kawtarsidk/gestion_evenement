@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Personne {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private  String cin;
     private String nom;
@@ -14,8 +14,8 @@ public class Personne {
     private String mail;
     private String telephone;
 
-    @OneToOne
-    Compte compte;
+    @OneToOne(mappedBy="personne")
+    private Compte compte;
 
     public Personne() {
     }

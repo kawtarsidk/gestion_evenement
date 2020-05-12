@@ -1,5 +1,7 @@
 package ma.pfa.gestion_evenement.entity;
 
+import org.hibernate.validator.constraints.ScriptAssert;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,7 +14,8 @@ public class Compte {
     private String password;
     private String privilege;
 
-    @OneToOne(mappedBy = "compte", fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "personne")
     private Personne personne;
 
     public Compte() {

@@ -19,6 +19,7 @@ public class CompteController{
     public void save(@RequestBody Compte compte){
         compteRepository.save(compte);
     }
+
     @GetMapping("/getAccounts")
     public List<Compte> findAll() {
         return compteRepository.findAll();
