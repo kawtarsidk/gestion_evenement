@@ -23,7 +23,7 @@ public class EventController {
         }
 
         @DeleteMapping("/deleteEvent/{id}")
-        public boolean delete(@PathVariable int id){
+        public boolean delete(@PathVariable Long id){
             eventRepository.deleteById(id);
             return true;
         }

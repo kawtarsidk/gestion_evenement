@@ -24,7 +24,7 @@ import java.util.List;
         }
 
         @DeleteMapping("/deleteEquip/{id}")
-        public boolean delete(@PathVariable int id){
+        public boolean delete(@PathVariable Long id){
         equipementRepository.deleteById(id);
         return true;
     }
