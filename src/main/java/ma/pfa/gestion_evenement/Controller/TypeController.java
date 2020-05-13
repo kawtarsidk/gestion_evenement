@@ -14,22 +14,22 @@ public class TypeController {
     @Autowired
     private TypeRepository typeRepository;
 
-    @PostMapping("/saveEvent")
+    @PostMapping("/save")
     public void save(@RequestBody Type type){
         typeRepository.save(type);
     }
 
-    @GetMapping("/getEvents")
+    @GetMapping("/get")
     public List<Type> findAll() {
         return typeRepository.findAll();
     }
 
-    @DeleteMapping("/deleteEvent/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id){
         typeRepository.deleteById(id);
     }
 
-    @PutMapping("/updateEvent")
+    @PutMapping("/update")
     public void update(@RequestBody Type type){
         typeRepository.save(type);
     }

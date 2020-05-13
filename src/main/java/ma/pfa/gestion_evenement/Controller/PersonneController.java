@@ -15,22 +15,22 @@ public class PersonneController {
         @Autowired
         private PersonneRepository personneRepository;
 
-        @PostMapping("/saveEvent")
+        @PostMapping("/save")
         public void save(@RequestBody Personne personne){
             personneRepository.save(personne);
         }
 
-        @GetMapping("/getEvents")
+        @GetMapping("/get")
         public List<Personne> findAll() {
             return personneRepository.findAll();
         }
 
-        @DeleteMapping("/deleteEvent/{id}")
+        @DeleteMapping("/delete/{id}")
         public void delete(@PathVariable Long id){
             personneRepository.deleteById(id);
         }
 
-        @PutMapping("/updateEvent")
+        @PutMapping("/update")
         public void update(@RequestBody Personne personne){
             personneRepository.save(personne);
         }

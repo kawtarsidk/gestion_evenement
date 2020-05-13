@@ -15,17 +15,17 @@ public class RespologiController {
     private RespoLogistiqueRepository RespoLogistiqueRepository;
 
 
-    @PostMapping("/saveAccount")
+    @PostMapping("/save")
     public void save(@RequestBody RespoLogistique respoLogistique){
         RespoLogistiqueRepository.save(respoLogistique);
     }
 
-    @GetMapping("/getAccounts")
+    @GetMapping("/get")
     public List<RespoLogistique> findAll() {
         return RespoLogistiqueRepository.findAll();
     }
 
-    @DeleteMapping("/deleteAccount/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id") Long id){
         RespoLogistiqueRepository.deleteById(id);
     }

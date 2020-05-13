@@ -15,17 +15,17 @@ public class CompteController{
 private CompteRepository compteRepository;
 
 
-@PostMapping("/saveAccount")
+@PostMapping("/save")
 public void save(@RequestBody Compte compte){
         compteRepository.save(compte);
         }
 
-@GetMapping("/getAccounts")
+@GetMapping("/get")
 public List<Compte> findAll() {
         return compteRepository.findAll();
         }
 
-@DeleteMapping("/deleteAccount/{id}")
+@DeleteMapping("/delete/{id}")
 public void delete(@PathVariable("id") Long id){
         compteRepository.deleteById(id);
 

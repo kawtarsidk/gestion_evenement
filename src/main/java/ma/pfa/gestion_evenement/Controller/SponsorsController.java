@@ -15,17 +15,17 @@ public class SponsorsController {
     private SponsorsRepository sponsorsRepository;
 
 
-    @PostMapping("/saveAccount")
+    @PostMapping("/save")
     public void save(@RequestBody Sponsors sponsors){
         sponsorsRepository.save(sponsors);
     }
 
-    @GetMapping("/getAccounts")
+    @GetMapping("/get")
     public List<Sponsors> findAll() {
         return sponsorsRepository.findAll();
     }
 
-    @DeleteMapping("/deleteAccount/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id") Long id){
         sponsorsRepository.deleteById(id);
     }

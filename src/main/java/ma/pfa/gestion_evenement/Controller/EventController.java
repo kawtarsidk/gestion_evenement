@@ -12,22 +12,22 @@ public class EventController {
         @Autowired
         private EventRepository eventRepository;
 
-        @PostMapping("/saveEvent")
+        @PostMapping("/save")
         public void save(@RequestBody Evenement evenement){
             eventRepository.save(evenement);
         }
 
-        @GetMapping("/getEvents")
+        @GetMapping("/get")
         public List<Evenement> findAll() {
             return eventRepository.findAll();
         }
 
-        @DeleteMapping("/deleteEvent/{id}")
+        @DeleteMapping("/delete/{id}")
         public void delete(@PathVariable Long id){
             eventRepository.deleteById(id);
         }
 
-        @PutMapping("/updateEvent")
+        @PutMapping("/update")
         public void update(@RequestBody Evenement evenement){
             eventRepository.save(evenement);
         }

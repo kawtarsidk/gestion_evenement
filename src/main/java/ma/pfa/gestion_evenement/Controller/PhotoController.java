@@ -13,22 +13,22 @@ public class PhotoController {
     @Autowired
     private PhotoRepository photoRepository;
 
-    @PostMapping("/saveEvent")
+    @PostMapping("/save")
     public void save(@RequestBody Photos photos){
         photoRepository.save(photos);
     }
 
-    @GetMapping("/getEvents")
+    @GetMapping("/get")
     public List<Photos> findAll() {
         return photoRepository.findAll();
     }
 
-    @DeleteMapping("/deleteEvent/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id){
         photoRepository.deleteById(id);
     }
 
-    @PutMapping("/updateEvent")
+    @PutMapping("/update")
     public void update(@RequestBody Photos photos){
         photoRepository.save(photos);
     }

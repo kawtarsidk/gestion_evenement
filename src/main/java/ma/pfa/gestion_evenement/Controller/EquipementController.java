@@ -13,23 +13,23 @@ import java.util.List;
         @Autowired
         private EquipementRepository equipementRepository;
 
-        @PostMapping("/saveEquip")
+        @PostMapping("/save")
         public void save(@RequestBody Equipement equipement){
             equipementRepository.save(equipement);
         }
 
-        @GetMapping("/getEquip")
+        @GetMapping("/get")
         public List<Equipement> findAll() {
             return equipementRepository.findAll();
         }
 
-        @DeleteMapping("/deleteEquip/{id}")
+        @DeleteMapping("/delete/{id}")
         public void delete(@PathVariable Long id){
         equipementRepository.deleteById(id);
 
     }
 
-        @PutMapping("/updateEquip")
+        @PutMapping("/update")
         public void update(@RequestBody Equipement equipement){
         equipementRepository.save(equipement);
     }

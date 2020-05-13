@@ -15,17 +15,17 @@ public class DirecteurController {
         private DirecteurRepository directeurRepository;
 
 
-        @PostMapping("/saveAccount")
+        @PostMapping("/save")
         public void save(@RequestBody Directeur directeur){
             directeurRepository.save(directeur);
         }
 
-        @GetMapping("/getAccounts")
+        @GetMapping("/get")
         public List<Directeur> findAll() {
             return directeurRepository.findAll();
         }
 
-        @DeleteMapping("/deleteAccount/{id}")
+        @DeleteMapping("/delete/{id}")
         public void delete(@PathVariable("id") Long id){
             directeurRepository.deleteById(id);
 
