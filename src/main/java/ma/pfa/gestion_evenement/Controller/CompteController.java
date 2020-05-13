@@ -12,26 +12,27 @@ import java.util.List;
 @RequestMapping("comptes")
 public class CompteController{
     @Autowired
-    private CompteRepository compteRepository;
+private CompteRepository compteRepository;
 
 
-    @PostMapping("/saveAccount")
-    public void save(@RequestBody Compte compte){
+@PostMapping("/saveAccount")
+public void save(@RequestBody Compte compte){
         compteRepository.save(compte);
-    }
+        }
 
-    @GetMapping("/getAccounts")
-    public List<Compte> findAll() {
+@GetMapping("/getAccounts")
+public List<Compte> findAll() {
         return compteRepository.findAll();
-    }
+        }
 
-    @DeleteMapping("/deleteAccount/{id}")
-    public void delete(@PathVariable("id") Long id){
+@DeleteMapping("/deleteAccount/{id}")
+public void delete(@PathVariable("id")  Integer id){
         compteRepository.deleteById(id);
-    }
 
-    @PutMapping("/update")
-    public void update(@RequestBody Compte compte){
+        }
+
+@PutMapping("/update")
+public void update(@RequestBody Compte compte){
         compteRepository.save(compte);
-    }
-}
+        }
+        }
