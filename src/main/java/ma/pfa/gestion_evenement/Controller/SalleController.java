@@ -25,9 +25,8 @@ public class SalleController {
     }
 
     @DeleteMapping("/deleteSalle/{id}")
-    public boolean delete(@PathVariable Long id){
+    public void delete(@PathVariable Long id){
         salleRepository.deleteById(id);
-        return true;
     }
 
     @PutMapping("/updateSalle")
