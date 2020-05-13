@@ -1,7 +1,7 @@
 package ma.pfa.gestion_evenement.Controller;
 
 import ma.pfa.gestion_evenement.Repository.EventRepository;
-import ma.pfa.gestion_evenement.entity.Compte;
+import ma.pfa.gestion_evenement.entity.Evenement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,23 +13,22 @@ public class EventController {
         private EventRepository eventRepository;
 
         @PostMapping("/saveEvent")
-        public void save(@RequestBody Compte evenement){
+        public void save(@RequestBody Evenement evenement){
             eventRepository.save(evenement);
         }
 
         @GetMapping("/getEvents")
-        public List<Compte> findAll() {
+        public List<Evenement> findAll() {
             return eventRepository.findAll();
         }
 
         @DeleteMapping("/deleteEvent/{id}")
-        public boolean delete(@PathVariable Long id){
+        public void delete(@PathVariable Long id){
             eventRepository.deleteById(id);
-            return true;
         }
 
         @PutMapping("/updateEvent")
-        public void update(@RequestBody Compte evenement){
+        public void update(@RequestBody Evenement evenement){
             eventRepository.save(evenement);
         }
 
