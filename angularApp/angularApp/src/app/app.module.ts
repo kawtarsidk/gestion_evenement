@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { EvenementComponent } from './evenement/evenement.component';
 import { NouvelEvenementComponent } from './nouvel-evenement/nouvel-evenement.component';
 import { ListeEvenementComponent } from './liste-evenement/liste-evenement.component';
 import { MaterialModule } from './material-module';
+import { NouveauCompteComponent } from './nouveau-compte/nouveau-compte.component';
+import { NouvelUserComponent } from './nouvel-user/nouvel-user.component';
+import { ListeUsersComponent } from './liste-users/liste-users.component';
 
 
 
@@ -16,9 +17,11 @@ import { MaterialModule } from './material-module';
   declarations: [
     AppComponent,
     HomeComponent,
-    EvenementComponent,
     NouvelEvenementComponent,
-    ListeEvenementComponent
+    ListeEvenementComponent,
+    NouveauCompteComponent,
+    NouvelUserComponent,
+    ListeUsersComponent
   ],
   imports: [
     BrowserModule,
