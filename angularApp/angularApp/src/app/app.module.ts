@@ -12,6 +12,9 @@ import { NouvelUserComponent } from './nouvel-user/nouvel-user.component';
 import { ListeUsersComponent } from './liste-users/liste-users.component';
 import { ListeDirComponent } from './liste-dir/liste-dir.component';
 import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
+import { PageAccueilComponent } from './page-accueil/page-accueil.component';
+import { ModifierEvenementComponent } from './modifier-evenement/modifier-evenement.component';
+import { DetailsEvenementComponent } from './details-evenement/details-evenement.component';
 
 
 
@@ -25,7 +28,10 @@ import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp
     NouvelUserComponent,
     ListeUsersComponent,
     ListeDirComponent,
-    ListeRespLogistiqueComponent
+    ListeRespLogistiqueComponent,
+    PageAccueilComponent,
+    ModifierEvenementComponent,
+    DetailsEvenementComponent
   ],
   imports: [
     BrowserModule,

@@ -8,11 +8,18 @@ import { NouveauCompteComponent } from './nouveau-compte/nouveau-compte.componen
 import { ListeUsersComponent } from './liste-users/liste-users.component';
 import { ListeDirComponent } from './liste-dir/liste-dir.component';
 import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
+import { ModifierEvenementComponent } from './modifier-evenement/modifier-evenement.component';
+import { DetailsEvenementComponent } from './details-evenement/details-evenement.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'liste-evenement', component : ListeEvenementComponent},
+  { path: 'liste-evenement', component : ListeEvenementComponent,
+  children: [
+    { path: 'modifier-evenement', component : ModifierEvenementComponent},
+    { path: 'details-evenement', component : DetailsEvenementComponent}
+  ]
+},
   { path: 'nouvel-evenement', component : NouvelEvenementComponent},
   { path: 'nouvel-user', component : NouvelUserComponent},
   { path: 'nouveau-compte', component : NouveauCompteComponent},
