@@ -11,6 +11,7 @@ import { NouveauCompteComponent } from './nouveau-compte/nouveau-compte.componen
 import { NouvelUserComponent } from './nouvel-user/nouvel-user.component';
 import { ListeUsersComponent } from './liste-users/liste-users.component';
 import { ListeDirComponent } from './liste-dir/liste-dir.component';
+import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
 
 
 
@@ -23,7 +24,8 @@ import { ListeDirComponent } from './liste-dir/liste-dir.component';
     NouveauCompteComponent,
     NouvelUserComponent,
     ListeUsersComponent,
-    ListeDirComponent
+    ListeDirComponent,
+    ListeRespLogistiqueComponent
   ],
   imports: [
     BrowserModule,

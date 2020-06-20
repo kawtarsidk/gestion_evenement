@@ -7,6 +7,7 @@ import { NouvelUserComponent } from './nouvel-user/nouvel-user.component';
 import { NouveauCompteComponent } from './nouveau-compte/nouveau-compte.component';
 import { ListeUsersComponent } from './liste-users/liste-users.component';
 import { ListeDirComponent } from './liste-dir/liste-dir.component';
+import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'nouveau-compte', component : NouveauCompteComponent},
   { path: 'liste-users', component : ListeUsersComponent},
   { path: 'liste-dir', component : ListeDirComponent},
+  { path: 'liste-resp-logistique', component : ListeRespLogistiqueComponent},
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, 
   { path: '**', component: HomeComponent },
   
