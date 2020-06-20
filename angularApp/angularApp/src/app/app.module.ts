@@ -12,6 +12,8 @@ import { NouvelUserComponent } from './nouvel-user/nouvel-user.component';
 import { ListeUsersComponent } from './liste-users/liste-users.component';
 import { ListeDirComponent } from './liste-dir/liste-dir.component';
 import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
+import { ModifUserComponent } from './modif-user/modif-user.component';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 
 
@@ -25,7 +27,9 @@ import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp
     NouvelUserComponent,
     ListeUsersComponent,
     ListeDirComponent,
-    ListeRespLogistiqueComponent
+    ListeRespLogistiqueComponent,
+    ModifUserComponent,
+    ViewUserComponent
   ],
   imports: [
     BrowserModule,
