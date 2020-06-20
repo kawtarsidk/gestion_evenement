@@ -1,37 +1,33 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
-export interface ListeUsers {
+export interface ListeDir {
   id: number;
-  nom: string;
-  email: string;
-  role: string;
+  titre: string;
+  dateDebut: string;
+  
 }
+const ELEMENT_DATA: ListeDir[] = [
+  {id: 1, titre: 'Journée d\'intégration', dateDebut: 'Octobre 17, 2020'},
+  {id: 2, titre: 'Soirée traditionnelle', dateDebut: 'Mars 15, 2020'},
+  {id: 3, titre: 'Sortie', dateDebut: 'Mai 17, 2020'},
 
-const ELEMENT_DATA: ListeUsers[] = [
-  {id: 1, nom: 'Alami Ahmad', email: 'ahmad@gmail.com', role: 'Directeur'},
-  {id: 2, nom: 'Alaoui Ali', email: 'Ali@gmail.com', role: 'Organisateur'},
-  {id: 3, nom: 'Amina slimani', email: 'Amina@gmail.com', role: 'Responsable'},
 ];
-
 @Component({
-  selector: 'app-evenement',
-  templateUrl: './liste-users.component.html',
-  styleUrls: ['./liste-users.component.scss']
+  selector: 'app-liste-dir',
+  templateUrl: './liste-dir.component.html',
+  styleUrls: ['./liste-dir.component.scss']
 })
-export class ListeUsersComponent implements OnInit {
+export class ListeDirComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'nom', 'email', 'role', 'action'];
+  displayedColumns: string[] = ['id', 'titre', 'dateDebut',  'action'];
   dataSource = ELEMENT_DATA;
-  //dataSource: MatTableDataSource<ListeUsers>; Uncomment when u bring the date from the back
+  //dataSource: MatTableDataSource<ListeEvenement>; Uncomment when u bring the date from the back
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-  constructor() { 
-  }
+  constructor() { }
 
   ngOnInit(): void {
     /* UNCOMMENT WHEN U BRING DATA FROM BACK
@@ -39,6 +35,7 @@ export class ListeUsersComponent implements OnInit {
     this.dataSource.sort = this.sort; */
 
   }
+
  /*  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

@@ -10,6 +10,7 @@ import { MaterialModule } from './material-module';
 import { NouveauCompteComponent } from './nouveau-compte/nouveau-compte.component';
 import { NouvelUserComponent } from './nouvel-user/nouvel-user.component';
 import { ListeUsersComponent } from './liste-users/liste-users.component';
+import { ListeDirComponent } from './liste-dir/liste-dir.component';
 
 
 
@@ -21,7 +22,8 @@ import { ListeUsersComponent } from './liste-users/liste-users.component';
     ListeEvenementComponent,
     NouveauCompteComponent,
     NouvelUserComponent,
-    ListeUsersComponent
+    ListeUsersComponent,
+    ListeDirComponent
   ],
   imports: [
     BrowserModule,
