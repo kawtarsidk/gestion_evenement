@@ -14,6 +14,8 @@ import { ListeDirComponent } from './liste-dir/liste-dir.component';
 import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
 import { ModifUserComponent } from './modif-user/modif-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { UserComponent } from './user/user.component';
+import { ParticipComponent } from './particip/particip.component';
 
 
 
@@ -29,7 +31,9 @@ import { ViewUserComponent } from './view-user/view-user.component';
     ListeDirComponent,
     ListeRespLogistiqueComponent,
     ModifUserComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    UserComponent,
+    ParticipComponent
   ],
   imports: [
     BrowserModule,
