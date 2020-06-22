@@ -1,0 +1,18 @@
+<!-- Default form login -->
+<form (ngSubmit)="login()" [formGroup]="loginForm" class="text-center border border-light p-5" >
+
+    <p class="h4 mb-4">S'authentifier</p>
+  
+    <input type="text" id="login" class="form-control mb-4" formControlName="login" placeholder="Login">
+  
+    <!-- Password -->
+    <input type="password" id="password" class="form-control mb-4" formControlName="password" placeholder="Password">
+
+  
+    <!-- Sign in button -->
+    <button  color="info" block="true" class="my-4" type="submit">Sign in</button>
+  
+  
+  
+  </form>
+  <!-- Default form login -->

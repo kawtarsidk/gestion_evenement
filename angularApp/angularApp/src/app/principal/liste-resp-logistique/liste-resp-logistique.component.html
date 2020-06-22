@@ -1,0 +1,39 @@
+  <div class="container_12" >	
+    <div class="grid_12" style="top : 10px;">
+      <div class="wrap block-3 pad-2">
+        <span></span>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="titre">
+            <th mat-header-cell *matHeaderCellDef> Titre </th>
+            <td mat-cell *matCellDef="let element"> {{element.titre}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="salle">
+            <th mat-header-cell *matHeaderCellDef> Salle </th>
+            <td mat-cell *matCellDef="let element"> {{element.salle}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="materiel">
+            <th mat-header-cell *matHeaderCellDef> Materiels </th>
+            <td mat-cell *matCellDef="let element"> {{element.materiel}} </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+  
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  
+  
+  
+  
