@@ -1,9 +1,9 @@
-
-  <div class="main">
+<div class="main">
+  <div class="container-fluid"></div>
       <header>
-          <h1><a ><img src="/src/assets/images/logo.png" alt=""></a></h1> 
-          <div class="clear"></div>    
-          <nav class="box-shadow">
+          <div class="clear"></div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/"><div class="logo">Home</div></a>
               <div>
                   <ul class="menu">
                       <li class="home-page"><a routerLink="home"><span></span></a></li>
@@ -14,20 +14,38 @@
                       <li><a routerLink="nouvel-user">new user</a></li>
                       <li><a routerLink="nouveau-compte">new cmpt</a></li>
                       <li><a routerLink="user">users</a></li>
-                      <li><a routerLink="particip">particip</a></li>
+                      
                       <!-- sous menu-->
             
                       <li><a href="clients.html">Galerie</a></li>
+                  <ul  class="navbar-nav">
+                      <li class="nav-item"><a class="nav-link active" routerLink="home"><span></span></a></li>
+                      <li class="nav-item"><a class="nav-link" routerLink="liste-evenement">Liste événements</a></li>
+                      <li class="nav-item"><a class="nav-link" routerLink="liste-dir">Liste dir</a></li>
+                      <li class="nav-item"><a class="nav-link" routerLink="liste-resp-logistique">ListeResp</a></li>
+                      <li class="nav-item"><a class="nav-link" routerLink="nouvel-evenement">Nouvel Evenement</a></li>
+                      <li class="nav-item"><a class="nav-link" routerLink="nouvel-user">new user</a></li>
+                      <li class="nav-item"><a class="nav-link" routerLink="nouveau-compte">new cmpt</a></li>
+                      <li class="nav-item"><a class="nav-link" routerLink="user">show usr</a></li>
+                      <li class="nav-item"><a class="nav-link" routerLink="particip">particip</a></li>
+                      <li class="nav-item" ><a href="clients.html" class="nav-link">Galerie</a></li>
                   </ul>
                   <div class="social-icons">
-                     
+
                   </div>
                   <div class="clear"></div>
               </div>
           </nav>
-      </header>   
-      <section id="content"><router-outlet></router-outlet></section>   	
-    </div>    
-    <div class="footer">
-        <p>© 2020 KawKaw</p>
-        </div>
+      </header>
+      <section id="content"><router-outlet></router-outlet></section>
+    </div>
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color darken-3 pt-4">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="/"> kawkaou.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
