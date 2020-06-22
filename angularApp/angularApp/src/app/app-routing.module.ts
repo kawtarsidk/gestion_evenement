@@ -26,11 +26,12 @@ const routes: Routes = [
     { path: 'view-user', component : ViewUserComponent},
     { path: 'liste-users', component : ListeUsersComponent}
   ]},
+  { path: 'liste-users', component : ListeUsersComponent},
   { path: 'liste-dir', component : ListeDirComponent},
   { path: 'liste-resp-logistique', component : ListeRespLogistiqueComponent},
-  { path: '',   redirectTo: '/home', pathMatch: 'full' }, 
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: HomeComponent },
-  
+
 ];
 
 

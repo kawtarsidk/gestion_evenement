@@ -33,7 +33,8 @@ import { ParticipComponent } from './particip/particip.component';
     ModifUserComponent,
     ViewUserComponent,
     UserComponent,
-    ParticipComponent
+    ParticipComponent,
+    ListeRespLogistiqueComponent
   ],
   imports: [
     BrowserModule,
