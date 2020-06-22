@@ -3,44 +3,26 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { NouvelEvenementComponent } from './nouvel-evenement/nouvel-evenement.component';
-import { ListeEvenementComponent } from './liste-evenement/liste-evenement.component';
-import { MaterialModule } from './material-module';
-import { NouveauCompteComponent } from './nouveau-compte/nouveau-compte.component';
-import { NouvelUserComponent } from './nouvel-user/nouvel-user.component';
-import { ListeUsersComponent } from './liste-users/liste-users.component';
-import { ListeDirComponent } from './liste-dir/liste-dir.component';
-import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
-import { ModifUserComponent } from './modif-user/modif-user.component';
-import { ViewUserComponent } from './view-user/view-user.component';
-import { UserComponent } from './user/user.component';
-import { ParticipComponent } from './particip/particip.component';
-
-
+import { LoginComponent } from './login/login.component';
+import { PrincipalModule } from './principal/principal.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NouvelEvenementComponent,
-    ListeEvenementComponent,
-    NouveauCompteComponent,
-    NouvelUserComponent,
-    ListeUsersComponent,
-    ListeDirComponent,
-    ListeRespLogistiqueComponent,
-    ModifUserComponent,
-    ViewUserComponent,
-    UserComponent,
-    ParticipComponent,
-    ListeRespLogistiqueComponent
+    LoginComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    PrincipalModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
