@@ -8,7 +8,7 @@ import { ListeEvenementComponent } from './liste-evenement/liste-evenement.compo
 import { NouvelUserComponent } from './nouvel-user/nouvel-user.component';
 import { NouvelEvenementComponent } from './nouvel-evenement/nouvel-evenement.component';
 import { NouveauCompteComponent } from './nouveau-compte/nouveau-compte.component';
-import { ParticipComponent } from './user/particip/particip.component';
+import { ParticipComponent } from './particip/particip.component';
 import { UserComponent } from './user/user.component';
 import { ModifUserComponent } from './modif-user/modif-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
@@ -41,7 +41,7 @@ import { HeaderComponent } from './header/header.component';
     CommonModule,
     PrincipalRoutingModule,
     MaterialModule
-    
+
   ]
 })
 export class PrincipalModule { }
