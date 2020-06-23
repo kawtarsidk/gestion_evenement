@@ -13,13 +13,14 @@ export class HomeComponent implements OnInit {
   compte : Compte;
   open : boolean = false;
 
-  constructor() {
-    
-   }
+  constructor() {}
 
   ngOnInit(): void {
     this.compte = JSON.parse(localStorage.getItem('user'));
-    this.login = this.compte.login;
+    if(this.compte){
+      this.login = this.compte.login;
+    }
+    
   }
 
 

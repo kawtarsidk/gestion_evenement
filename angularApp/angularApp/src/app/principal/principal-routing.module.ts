@@ -12,23 +12,27 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { ListeUsersComponent } from './liste-users/liste-users.component';
 import { ListeDirComponent } from './liste-dir/liste-dir.component';
 import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
+import { AuthGuardService } from '../login/auth-guard.service';
+import { LoginComponent } from '../login/login.component';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'liste-evenement', component : ListeEvenementComponent},
-  { path: 'nouvel-evenement', component : NouvelEvenementComponent},
-  { path: 'nouvel-user', component : NouvelUserComponent},
-  { path: 'nouveau-compte', component : NouveauCompteComponent},
-  { path: 'particip', component : ParticipComponent},
-  { path: 'user', component : UserComponent, children:[
-    { path: 'modif-user', component : ModifUserComponent},
-    { path: 'view-user', component : ViewUserComponent},
-    { path: 'liste-users', component : ListeUsersComponent}
+  { path: 'home', component: HomeComponent , canActivate : [AuthGuardService]},
+  { path: 'liste-evenement', component : ListeEvenementComponent, canActivate : [AuthGuardService]},
+  { path: 'nouvel-evenement', component : NouvelEvenementComponent, canActivate : [AuthGuardService]},
+  { path: 'nouvel-user', component : NouvelUserComponent, canActivate : [AuthGuardService]},
+  { path: 'nouveau-compte', component : NouveauCompteComponent, canActivate : [AuthGuardService]},
+  { path: 'particip', component : ParticipComponent, canActivate : [AuthGuardService]},
+  { path: 'user', component : UserComponent, canActivate : [AuthGuardService], children:[
+    { path: 'modif-user', component : ModifUserComponent, canActivate : [AuthGuardService]},
+    { path: 'view-user', component : ViewUserComponent, canActivate : [AuthGuardService]},
+    { path: 'liste-users', component : ListeUsersComponent, canActivate : [AuthGuardService]}
   ]},
-  { path: 'liste-users', component : ListeUsersComponent},
-  { path: 'liste-dir', component : ListeDirComponent},
-  { path: 'liste-resp-logistique', component : ListeRespLogistiqueComponent},
+  { path: 'liste-users', component : ListeUsersComponent, canActivate : [AuthGuardService]},
+  { path: 'liste-dir', component : ListeDirComponent, canActivate : [AuthGuardService]},
+  { path: 'liste-resp-logistique', component : ListeRespLogistiqueComponent, canActivate : [AuthGuardService]},
+  { path: '', component: LoginComponent },
+  { path: '**', component: LoginComponent },
 ];
 
 @NgModule({

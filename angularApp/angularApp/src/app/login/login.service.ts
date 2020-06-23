@@ -21,7 +21,6 @@ export class LoginService {
     }
   }
   clearLocalStorage() {
-    console.log("local storage get item",JSON.parse(localStorage.getItem('user')))
     localStorage.clear();
   }
 }
