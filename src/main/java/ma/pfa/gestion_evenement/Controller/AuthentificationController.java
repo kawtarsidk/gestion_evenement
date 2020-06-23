@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ma.pfa.gestion_evenement.Mapper.CompteToClient;
 import ma.pfa.gestion_evenement.Repository.CompteRepository;
 import ma.pfa.gestion_evenement.entity.Authentification;
 import ma.pfa.gestion_evenement.entity.Compte;
@@ -20,8 +21,13 @@ public class AuthentificationController {
     private CompteRepository compteRepository;
     
     @PostMapping("/login")
-    public Compte login(@RequestBody Authentification authentification){
-            return compteRepository.findByLoginAndPassword(authentification.getLogin(), authentification.getPassword());
-            }
+    public CompteToClient login(@RequestBody Authentification authentification){
+        Compte compte = compteRepository.findByLoginAndPassword(authentification.getLogin(), authentification.getPassword());
+        if(compte != null) {
+        	CompteToClient client = new CompteToClient();
+        	return client.mapCompteToClient(compte);
+        }
+        return null;
+       }
 
 }

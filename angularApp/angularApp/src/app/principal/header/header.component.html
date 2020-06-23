@@ -1,11 +1,11 @@
 <div class="main">
-    <div class="container-fluid"></div>
+    <div class="container"></div>
         <header>
             <div class="clear"></div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              <a class="navbar-brand" href="/"><div class="logo">Home</div></a>
-                <div>
-                    <ul  class="navbar-nav">
+              <a class="navbar-brand" routerLink="/"><div class="logo">Home</div></a>
+                <div class="collapse navbar-collapse">
+                    <ul  class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link active" routerLink="/home"><span></span></a></li>
                         <li class="nav-item"><a class="nav-link" routerLink="/liste-evenement">Liste événements</a></li>
                         <li class="nav-item"><a class="nav-link" routerLink="/liste-dir">Liste dir</a></li>
@@ -17,11 +17,21 @@
                         <li class="nav-item"><a class="nav-link" routerLink="/particip">particip</a></li>
                         <li class="nav-item" ><a href="clients.html" class="nav-link">Galerie</a></li>
                     </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" ><span class="glyphicon glyphicon-user">{{compte.login}} | {{compte.privilege}}</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" (click)=logout()>Déconnexion</a>
+                        </li>
+                    </ul>
+                    
                     <div class="social-icons">
   
                     </div>
                     <div class="clear"></div>
                 </div>
+                  
             </nav>
         </header>
         

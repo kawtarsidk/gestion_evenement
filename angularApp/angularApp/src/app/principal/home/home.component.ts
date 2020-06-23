@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Compte } from 'src/app/login/login.component';
+import { LoginService } from 'src/app/login/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   login : string;
+  compte : Compte;
+  open : boolean = false;
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
+    this.compte = JSON.parse(localStorage.getItem('user'));
+    this.login = this.compte.login;
   }
 
-public open=false;
-colaps(): void {
 
-  this.open=! this.open;
-}
+  
+  colaps(): void {
+    this.open=! this.open;
+  }
 
 }
