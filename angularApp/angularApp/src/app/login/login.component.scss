@@ -1,7 +1,17 @@
+body{
+  background-image: url("../../assets/images/MicrosoftTeams-image.png");
+  background-size: cover;
+}
 div{
   width:400px;
   margin:0 auto;
-  margin-top:10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+
+
 }
 
 form {
@@ -20,7 +30,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 button{
-  background-color: #53af57;
+  background-color: #8FBC8F;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
