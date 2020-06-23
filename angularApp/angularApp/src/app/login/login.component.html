@@ -1,18 +1,24 @@
 <!-- Default form login -->
+
+<body>
+<div id="container3">
 <form (ngSubmit)="login()" [formGroup]="loginForm" class="text-center border border-light p-5" >
 
     <p class="h4 mb-4">S'authentifier</p>
-  
+
     <input type="text" id="login" class="form-control mb-4" formControlName="login" placeholder="Login">
-  
+
     <!-- Password -->
     <input type="password" id="password" class="form-control mb-4" formControlName="password" placeholder="Password">
 
-  
+
     <!-- Sign in button -->
-    <button  color="info" block="true" class="my-4" type="submit">Sign in</button>
-  
-  
-  
+    <button  color="info" block="true" class="my-4" type="submit">Login</button>
+
+
+
   </form>
+</div>
+</body>
+
   <!-- Default form login -->
