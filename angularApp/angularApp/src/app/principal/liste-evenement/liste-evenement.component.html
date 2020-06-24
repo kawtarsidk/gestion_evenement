@@ -5,6 +5,7 @@
   <div class="grid_12" style="top : 10px;">
     <div class="wrap block-3 pad-2">
       <span></span>
+      <h2 style="margin: auto;">Liste des événements</h2>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> Id </th>
@@ -38,10 +39,10 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      <a class="btn btn-primary btn-lg btn-block" routerLink="nounel-evenement">+ nouvel énvénement</a>
-
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-
+      <br>
+      <br>
+      <a class="btn btn-dark btn-lg btn-block" routerLink="nouvel-evenement">+ nouvel énvénement</a>
     </div>
   </div>
   <div class="clear"></div>

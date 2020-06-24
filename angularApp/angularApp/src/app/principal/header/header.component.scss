@@ -1,4 +1,49 @@
-header{
-    margin: 0;
-    width: 100%;
-  }
+.ic {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
+.main {width:100%; background:url('/src/assets/images/main.jpg') center 0 repeat; border-top:#000000 5px solid}
+/***********************************************************************/
+a {text-decoration:none; cursor:pointer}
+a:hover {text-decoration:none}
+
+a.button {background:#8FBC8F; font-size:14px; line-height:20px; color:#fff; display:inline-block; padding:6px 20px 5px 20px; border-radius:5px; box-shadow:0 1px 1px #fff}
+a.button:hover {background:#131313}
+
+a.link:hover {text-decoration:underline}
+
+.color-1 {color:#fff}
+a.color-1:hover {text-decoration:underline}
+
+.font-3 {font-size:17px; line-height:33px; color:#292929}
+
+h2 {font-size:34px; line-height:45px; color:#000; font-weight:normal; font-family:'Oxygen', sans-serif; letter-spacing:1px}
+h3 {font-size:24px; line-height:30px; color:#000; font-weight:normal; font-family:'Oxygen', sans-serif}
+h3 strong {font-weight:normal; display:block; margin-top:-5px}
+
+ul {margin:0; padding:0;list-style-image:none}
+ul.list-1 li {padding:10px 0 0 17px; line-height:25px; background:url('/src/assets/images/marker.gif') 0 20px no-repeat}
+ul.list-1 li a {font-size:14px; color:#000; line-height:25px}
+ul.list-1 li a:hover {color:#8FBC8F}
+
+
+.clear {
+    clear:both; line-height:0; font-size:0; width:100%
+}
+
+.box-shadow {
+    box-shadow:0 1px 1px #fff
+}
+
+nav {
+    z-index:100; border-radius:12px; background:#ebebec; margin:22px 6px 0 6px; padding:4px
+}
+
+nav>div {background:url('/src/assets/images/nav.jpg') 0 0 repeat-x #8FBC8F; border-radius:12px 8px 8px 12px}
+ul.menu {margin:0 1px 0 0;  border-right:#8FBC8F 1px solid; display:inline-block; float:left}
+ul.menu li {float:left; line-height:17px; margin:0 0 0 0; background:url('/src/assets/images/transp.png') 0 0 repeat; border-right:#8FBC8F 1px solid; border-left:#8FBC8F 1px solid}
+ul.menu li a {font-size:13px; line-height:17px; color:#fff; font-weight:bold; display:block; padding:23px 28px 24px 28px}
+ul.menu li.home-page {display:inline-block; background:url('src/assets/images/transp.png') 0 0 repeat; border-radius:8px 0 0 8px; border:none !important}
+ul.menu li:hover , ul.menu li.current {background:url('src/assets/images/current.jpg') 0 0 repeat-x #000000; border-right:#000000 1px solid; border-left:#000000 1px solid}
+ul.menu li.home-page a {padding:21px 22px 24px 23px !important}
+ul.menu li.home-page span {background:url('src/assets/images/home-page-img.png') 0 0 no-repeat; width:19px; height:19px; display:block}
+ 
+ul.right {margin:0 1px 0 0;  border-right:#8FBC8F 1px solid; display:inline-block; float:right}
+ul.right li {float:right; line-height:17px; margin:0 0 0 0;  padding:23px 28px 24px 2px; font-size:13px; line-height:17px; color:#fff; font-weight:bold; display:block; background:url('/src/assets/images/transp.png') 0 0 repeat; border-right:#8FBC8F 1px solid; border-left:#8FBC8F 1px solid}
