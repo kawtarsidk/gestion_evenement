@@ -78,6 +78,10 @@ public class Evenement {
 
     public Evenement(Long id) { this.id = id; }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getTitre() {
         return titre;
     }
