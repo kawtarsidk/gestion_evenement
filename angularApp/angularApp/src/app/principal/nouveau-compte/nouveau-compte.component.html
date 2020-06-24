@@ -5,33 +5,37 @@
     <div class="grid_12">
         <div class="wrap block-3 pad-2">
             <h1 class="text-center"> Nouveau Compte</h1>
-            <form>
+            <form (ngSubmit)="newCompte()" [formGroup]="compteForm">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="login">Login</label>
-                            <input type="text" name="login" class="form-control" id="login" placeholder="login">
+                            <input type="text" name="login" class="form-control" id="login" formControlName="login" placeholder="login">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="password">Password</label>
-                            <input type="text" name="password" class="form-control" id="password" placeholder="password">
+                            <input type="password" name="password" class="form-control" id="password" formControlName="password" placeholder="password">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="role">Role</label>
-                            <select id="role" placeholder="role" class="form-control">
-                                <option >Administrateur</option>
-                                <option >Directeur</option>
-                                <option >Responsable logistique</option>
-                                <option >Participant</option>
-                                <option >Organisateur</option>
+                            <label for="privilege">Role</label>
+                            <select id="privilege" placeholder="privilege" formControlName="privilege" class="form-control">
+                                <option value="Administrateur">Administrateur</option>
+                                <option value="Directeur">Directeur</option>
+                                <option value="Responsable logistique">Responsable logistique</option>
+                                <option value="Participant">Participant</option>
+                                <option value="Organisateur">Organisateur</option>
                               </select>
                         </div>
                     </div>
-                    <input type="submit" name="enregistrer" class="btn btn-dark lg">
+                    <br>
+                    <input type="submit" name="enregistrer" class="btn btn-dark lg text-center">
+                    <br>
+                    <p *ngIf="isPassed" style="color:green;">{{success}}</p>
+                    <p *ngIf="!isPassed" style="color : red;">{{error}}</p>
                 </div>
             </form>
         </div>

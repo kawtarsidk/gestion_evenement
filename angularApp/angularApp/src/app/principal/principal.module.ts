@@ -18,6 +18,7 @@ import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp
 import { MaterialModule } from './material-module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     CommonModule,
     PrincipalRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
 
   ]
 })

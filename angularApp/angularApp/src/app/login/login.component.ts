@@ -4,8 +4,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from './login.service';
 export interface Compte{
-  login :string;
-  privilege : string;
+  login? :string;
+  privilege? : string;
+  password?: string;
 }
 @Component({
   selector: 'app-login',

@@ -5,39 +5,39 @@
     <div class="grid_12">
       <div class="wrap block-3 pad-2">
               <h1 class="text-center"> Nouveau utilisateur</h1>
-              <form>
+              <form (ngSubmit)="newUser()" [formGroup]="userForm" > 
                 <div class="form-group">
                   <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="cin">CIN</label>
-                    <input type="text" name="cin" class="form-control" id="cin" placeholder="cin">
+                    <input type="text" name="cin" class="form-control" id="cin" formControlName="cin" placeholder="cin">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="nom">Nom</label>
-                    <input type="text"  name="nom" class="form-control" id="nom" placeholder="Nom">
+                    <input type="text"  name="nom" class="form-control" id="nom" formControlName="nom" placeholder="Nom">
                    </div>
                   </div>
                    <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="prenom">Prenom</label>
-                      <input type="text" name="prenom" class="form-control" id="prenom" placeholder="prenom">
+                      <input type="text" name="prenom" class="form-control" id="prenom" formControlName="prenom" placeholder="prenom">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="Address">
+                        <input type="text" class="form-control" id="address" formControlName="adresse" placeholder="Address">
                         </div>
                   </div>
                   <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="email">Email</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                    <input type="email" name="email" class="form-control" id="email" formControlName="email" placeholder="Email">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="tel">Telephone</label>
-                        <input type="text"  name="tel" class="form-control" id="tel" placeholder="Telephone">
+                        <input type="text"  name="tel" class="form-control" id="tel" formControlName="tel" placeholder="Telephone">
                        </div>
                     </div>
-                    <select id="compte" placeholder="compte" class="form-control">
+                    <select id="compte" placeholder="compte" formControlName="compte" class="form-control">
                       <option >Compte</option>
 
                   </select>
