@@ -2,17 +2,7 @@ body{
   background-image: url("../../assets/images/MicrosoftTeams-image.png");
   background-size: cover;
 }
-div{
-  width:400px;
-  margin:0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
 
-
-}
 
 form {
   width:100%;
@@ -20,6 +10,14 @@ form {
   border: 1px solid #f1f1f1;
   background: #fff;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  width:400px;
+  margin:0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color:transparent !important
 }
 input[type=text], input[type=password] {
   width: 100%;
