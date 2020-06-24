@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       error => {
         this.isLoading = false;
         console.log("error",error);
-        this.error = error;
+        this.error = error.error.message;
       } 
     );
   } 
