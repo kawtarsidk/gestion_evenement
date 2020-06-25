@@ -55,7 +55,8 @@ export class NouvelUserComponent implements OnInit {
       prenom: ['', Validators.required],
       adresse: ['', Validators.required],
       email: ['', Validators.required],
-      tel: ['', Validators.required, Validators.pattern("[0-9 ]{10}")]
+      compte: ['', Validators.required],
+      telephone: ['', Validators.required, Validators.pattern("[0-9 ]{10}")]
     });
   }
 
