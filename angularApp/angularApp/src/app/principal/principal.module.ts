@@ -18,7 +18,9 @@ import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp
 import { MaterialModule } from './material-module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ModificationModalComponent } from './modification-modal/modification-modal.component';
+import { SuppressionModalComponent } from './suppression-modal/suppression-modal.component';
 
 
 @NgModule({
@@ -37,12 +39,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     ParticipComponent,
     ListeRespLogistiqueComponent,
     FooterComponent,
-    HeaderComponent,],
+    HeaderComponent,
+    ModificationModalComponent,
+    SuppressionModalComponent,],
   imports: [
     CommonModule,
     PrincipalRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
   ]
 })
