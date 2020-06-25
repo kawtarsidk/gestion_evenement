@@ -5,7 +5,7 @@
     <div class="grid_12">
       <div class="wrap block-3 pad-2">
               <h1 class="text-center"> Nouveau utilisateur</h1>
-              <form (ngSubmit)="newUser()" [formGroup]="userForm" > 
+              <form (ngSubmit)="newUser()" [formGroup]="userForm" >
                 <div class="form-group">
                   <div class="form-row">
                   <div class="form-group col-md-6">
@@ -33,15 +33,20 @@
                     <input type="email" name="email" class="form-control" id="email" formControlName="email" placeholder="Email">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="tel">Telephone</label>
-                        <input type="text"  name="tel" class="form-control" id="tel" formControlName="tel" placeholder="Telephone">
+                        <label for="telephone">Telephone</label>
+                        <input type="text"  name="telephone" class="form-control" id="telephone" formControlName="telephone" placeholder="Telephone">
                        </div>
                     </div>
+                  <label for="compte">Compte</label>
                     <select id="compte" placeholder="compte" formControlName="compte" class="form-control">
-                      <option >Compte</option>
+                      <option>compte</option>
 
                   </select>
+                  <br>
                 <input type="submit" class="btn btn-primary">
+                  <br>
+                  <p *ngIf="isPassed" style="color:green;">{{success}}</p>
+                  <p *ngIf="!isPassed" style="color : red;">{{error}}</p>
                 </div>
               </form>
          </div>
