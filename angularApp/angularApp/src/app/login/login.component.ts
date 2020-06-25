@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from './login.service';
 export interface Compte{
+  id?: number;
   login? :string;
   privilege? : string;
   password?: string;
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private loginService : LoginService
   ) {
     this.createForm();
-    
+
   }
 
   ngOnInit() {
@@ -49,9 +50,9 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.isLoading = false;
         console.log("error",error);
         this.error = error.error.message;
-      } 
+      }
     );
-  } 
+  }
 
   checkLocalStorage() {
     if (!localStorage.getItem('user')) {
@@ -60,7 +61,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       console.log('localStorage ready!');
     }
   }
-  
+
 
   private createForm() {
     this.loginForm = this.formBuilder.group({

@@ -38,9 +38,8 @@
                        </div>
                     </div>
                   <label for="compte">Compte</label>
-                    <select id="compte" placeholder="compte" formControlName="compte" class="form-control">
-                      <option>compte</option>
-
+                    <select id="compte"  formControlName="compte" class="form-control">
+                      <option *ngFor="let c of compte" [value]="c.id">{{c.login}}</option>
                   </select>
                   <br>
                 <input type="submit" class="btn btn-primary">

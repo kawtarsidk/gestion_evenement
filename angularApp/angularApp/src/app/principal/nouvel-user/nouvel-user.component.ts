@@ -10,7 +10,6 @@ export interface personnes {
   prenom : string;
   mail : string;
   telephone : string;
-  compte : Compte;
 }
 
 @Component({
@@ -18,22 +17,27 @@ export interface personnes {
   templateUrl: './nouvel-user.component.html',
   styleUrls: ['./nouvel-user.component.scss']
 })
-export class NouvelUserComponent implements OnInit {
+export class
+NouvelUserComponent implements OnInit {
   userForm: FormGroup;
   error: string | undefined;
   success : string;
   isPassed : boolean = false;
   id : number;
-  compte : Compte;
+
+  compte:Compte[];
 
   constructor(private formBuilder: FormBuilder,private httpClient : HttpClient) { this.createForm();}
 
   ngOnInit(): void {
+    this.httpClient.get<Compte[]>('http://localhost:8080/comptes/get').subscribe(res=>{this.compte=res},
+      error1 => { console.log("error",error1);
+        this.error = error1.error.message;});
   }
 
   newUser(){
     console.log("userForm", this.userForm.value);
-    const user = this.httpClient.post('http://localhost:8080/Personnes/save',this.userForm.value);
+    const user = this.httpClient.post('http://localhost:8080/user/save',this.userForm.value);
     user.subscribe(
       (user: personnes) => {
         console.log("user",user);
@@ -50,6 +54,7 @@ export class NouvelUserComponent implements OnInit {
 
   private createForm() {
     this.userForm = this.formBuilder.group({
+      id:"",
       cin: ['', Validators.required],
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
