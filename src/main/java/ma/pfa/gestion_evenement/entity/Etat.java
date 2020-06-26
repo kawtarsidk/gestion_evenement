@@ -10,9 +10,6 @@ public class Etat {
     private Long id;
     private String etatEvenement;
 
-    @OneToMany(mappedBy = "etat")
-    private List<Evenement> evenement;
-
     public Etat() {
     }
 

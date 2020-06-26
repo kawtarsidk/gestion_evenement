@@ -14,8 +14,8 @@ public class Equipement {
     @JoinColumn(name = "type", referencedColumnName = "id", insertable = false, updatable = false)
     private Type type;
 
-    @ManyToMany(mappedBy = "equipement", fetch = FetchType.LAZY)
-    private List<Evenement> evenement;
+  //  @ManyToMany(mappedBy = "equipement", fetch = FetchType.LAZY)
+    //private List<Evenement> evenement;
 
     public Equipement() {
     }

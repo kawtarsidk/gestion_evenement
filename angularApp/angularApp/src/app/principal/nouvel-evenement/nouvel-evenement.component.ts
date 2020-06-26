@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup ,FormBuilder, Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import {Compte} from "../../login/login.component";
+import {Salle} from "../Salle";
+
 
 export interface Event{
   titre: string;
   theme: string;
-  type: string;
+  //type: string;
   objectif:string;
   nbrParticipant: number;
   budjet: number;
   datedebut: Date;
   datefin:Date;
+  etat:string;
+  equipements:string;
   publicConcerne:string;
-  sponsors: string;
+  //sponsors: string;
   salle: string;
   details: string;
 }
+
+
 
 @Component({
   selector: 'app-nouvel-evenement',
@@ -30,16 +35,23 @@ export class NouvelEvenementComponent implements OnInit {
   success : string;
   isPassed : boolean = false;
   id : number;
+  salle:Salle[];
 
-  constructor(private formBuilder: FormBuilder,private httpClient : HttpClient,) {this.createForm(); }
+  constructor(private formBuilder: FormBuilder,private httpClient : HttpClient) {this.createForm(); }
 
   ngOnInit(): void {
+    this.httpClient.get<Salle[]>('http://localhost:8080/salles/gets').subscribe(res => {this.salle = res},
+  error1 => {console.log("error", error1);
+        this.error = error1.error.message;
+      });
   }
+
+
 
   newEvent(){
 
     console.log("event form", this.eventForm.value);
-    const event = this.httpClient.post('http://localhost:8080/',this.eventForm.value);
+    const event = this.httpClient.post('http://localhost:8080/events/save',this.eventForm.value);
 
     event.subscribe(
       (event: Event) => {
@@ -59,18 +71,19 @@ export class NouvelEvenementComponent implements OnInit {
       id : "",
       titre: ['', Validators.required],
       theme: ['', Validators.required],
-      type: ['', Validators.required],
+      //type: ['', Validators.required],
       objectif: ['', Validators.required],
       nbrParticipant: ['', Validators.required],
       budjet: ['', Validators.required],
       datedebut: ['', Validators.required],
       datefin: ['', Validators.required],
       publicConcerne: ['', Validators.required],
-      sponsors: ['', Validators.required],
+      //sponsors: ['', Validators.required],
       salle: ['', Validators.required],
       details: ['', Validators.required],
-      personne : null,
-      organisateur : null
+      equipements: ['', Validators.required],
+      etat:""
+
     });
   }
 }

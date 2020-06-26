@@ -8,8 +8,8 @@ import java.util.List;
 @Entity
 public class Organisateur extends Personne{
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "organisateur")
-    private List<Evenement> evenement;
+    //@OneToMany(fetch = FetchType.LAZY, mappedBy = "organisateur")
+  //  private List<Evenement> evenement;
 
     public Organisateur() {
     }

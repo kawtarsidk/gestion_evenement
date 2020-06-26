@@ -10,55 +10,58 @@ public class Evenement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titre;
-
     @Temporal(TemporalType.DATE)
     private Date datedebut;
-
     @Temporal(TemporalType.DATE)
     private Date datefin;
-
     private String theme;
     private int nbrParticipant;
+    private int budget;
     private String objectif;
     private String publicConcerne;
     private String details;
+    private String etat;
+    private String equipements;
+    private int  salle_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "organisateur_id",referencedColumnName = "id", insertable = false, updatable = false)
-    private Organisateur organisateur;
+    public int getSalle_id() {
+        return salle_id;
+    }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "etat_id" , referencedColumnName = "id", insertable = false, updatable = false)
-    private Etat etat;
+    public void setSalle_id(int salle_id) {
+        this.salle_id = salle_id;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+
+    public String getEquipements() {
+        return equipements;
+    }
+
+    public void setEquipements(String equipements) {
+        this.equipements = equipements;
+    }
 
     @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
     private List<Photos> photos;
-
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
-    private List<InfosParticipation> infosParticipations;
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JoinTable(name = "InfoEquipement",
-            joinColumns = {
-                    @JoinColumn(name = "evenement_id", referencedColumnName = "id",
-                            nullable = false, updatable = false)},
-            inverseJoinColumns = {
-                    @JoinColumn(name = "equipement_id", referencedColumnName = "id",
-                            nullable = false, updatable = false)})
-    private List<Equipement> equipement;
-
-    @OneToMany(mappedBy = "evenement",fetch = FetchType.LAZY)
-    private List<Budget> Budget;
-
-    @OneToMany(mappedBy = "evenement")
-    private List<InfoSalle> infoSalle;
-
-
-
     public Evenement() {
     }
 
-    public Evenement(String titre, Date datedebut, Date datefin, String theme, int nbrParticipant, String objectif, String publicConcerne, String details, Organisateur organisateur, Etat etat, List<Photos> photos, List<InfosParticipation> infosParticipations, List<Equipement> equipement, List<Budget> budget, List<InfoSalle> infoSalle) {
+    public Evenement(String titre, Date datedebut, Date datefin, String theme, int nbrParticipant, String objectif, int budget, String publicConcerne, String details, String etat, String equipements, int salle_id) {
         this.titre = titre;
         this.datedebut = datedebut;
         this.datefin = datefin;
@@ -67,13 +70,10 @@ public class Evenement {
         this.objectif = objectif;
         this.publicConcerne = publicConcerne;
         this.details = details;
-        this.organisateur = organisateur;
         this.etat = etat;
-        this.photos = photos;
-        this.infosParticipations = infosParticipations;
-        this.equipement = equipement;
-        this.Budget = budget;
-        this.infoSalle = infoSalle;
+        this.salle_id = salle_id;
+        this.equipements=equipements;
+        this.budget=budget;
     }
 
     public Evenement(Long id) { this.id = id; }
