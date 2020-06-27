@@ -21,6 +21,8 @@ import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ModificationModalComponent } from './modification-modal/modification-modal.component';
 import { SuppressionModalComponent } from './suppression-modal/suppression-modal.component';
+import { UpdateEventComponent } from './update-event/update-event.component';
+import { DeleteEventComponent } from './delete-event/delete-event.component';
 
 
 @NgModule({
@@ -41,7 +43,10 @@ import { SuppressionModalComponent } from './suppression-modal/suppression-modal
     FooterComponent,
     HeaderComponent,
     ModificationModalComponent,
-    SuppressionModalComponent,],
+    SuppressionModalComponent,
+    UpdateEventComponent,
+    DeleteEventComponent
+  ],
   imports: [
     CommonModule,
     PrincipalRoutingModule,

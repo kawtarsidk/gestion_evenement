@@ -10,7 +10,7 @@ export interface Event{
   //type: string;
   objectif:string;
   nbrParticipant: number;
-  budjet: number;
+  budget: number;
   datedebut: Date;
   datefin:Date;
   etat:string;
@@ -32,49 +32,54 @@ export class NouvelEvenementComponent implements OnInit {
 
   eventForm: FormGroup;
   error: string | undefined;
-  success : string;
-  isPassed : boolean = false;
-  id : number;
-  salle:Salle[];
+  success: string;
+  isPassed: boolean = false;
+  id: number;
+  salle: Salle[];
 
-  constructor(private formBuilder: FormBuilder,private httpClient : HttpClient) {this.createForm(); }
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
+    this.createForm();
+  }
 
   ngOnInit(): void {
-    this.httpClient.get<Salle[]>('http://localhost:8080/salles/gets').subscribe(res => {this.salle = res},
-  error1 => {console.log("error", error1);
+    this.httpClient.get<Salle[]>('http://localhost:8080/salles/gets').subscribe(res => {
+        this.salle = res
+      },
+      error1 => {
+        console.log("error", error1);
         this.error = error1.error.message;
       });
   }
 
 
-
-  newEvent(){
+  newEvent() {
 
     console.log("event form", this.eventForm.value);
-    const event = this.httpClient.post('http://localhost:8080/events/save',this.eventForm.value);
+    const event = this.httpClient.post('http://localhost:8080/events/save', this.eventForm.value);
 
     event.subscribe(
       (event: Event) => {
-        console.log("evenement",event);
+        console.log("evenement", event);
         this.isPassed = true;
         this.success = "evenement crée avec succès";
       },
       error => {
-        console.log("error",error);
+        console.log("error", error);
         this.isPassed = false;
         this.error = error.error.message;
       }
     );
   }
+
   private createForm() {
     this.eventForm = this.formBuilder.group({
-      id : "",
+      id: "",
       titre: ['', Validators.required],
       theme: ['', Validators.required],
       //type: ['', Validators.required],
       objectif: ['', Validators.required],
       nbrParticipant: ['', Validators.required],
-      budjet: ['', Validators.required],
+      budget: ['', Validators.required],
       datedebut: ['', Validators.required],
       datefin: ['', Validators.required],
       publicConcerne: ['', Validators.required],
@@ -82,8 +87,7 @@ export class NouvelEvenementComponent implements OnInit {
       salle: ['', Validators.required],
       details: ['', Validators.required],
       equipements: ['', Validators.required],
-      etat:""
+      etat: "en attente"
 
     });
-  }
-}
+  }}

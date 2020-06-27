@@ -4,16 +4,29 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {HttpClient} from "@angular/common/http";
 import {MatDialog} from "@angular/material/dialog";
-import {ListeUsers} from "../liste-users/liste-users.component";
+
 import {ModificationModalComponent} from "../modification-modal/modification-modal.component";
 import {SuppressionModalComponent} from "../suppression-modal/suppression-modal.component";
+import { UpdateEventComponent } from '../update-event/update-event.component';
+import { DeleteEventComponent } from '../delete-event/delete-event.component';
 
 export interface ListeEvenement {
   id: number;
   titre: string;
-  dateDebut: string;
+  datedebut: Date;
   etat: string;
+  equipements:string,
+  theme:string,
+  details:string,
+  nbrParticipant:number,
+  publicConcerne:string,
+  objectif:string,
+  budget:number,
+  datefin:Date,
+
+
 }
+
 
 
 @Component({
@@ -55,7 +68,7 @@ export class ListeEvenementComponent implements OnInit {
      }
 
   editEvent(event) {
-    const dialogRef = this.dialog.open(ModificationModalComponent, {
+    const dialogRef = this.dialog.open(UpdateEventComponent, {
       width: '450px',
       data: event
     });
@@ -67,7 +80,7 @@ export class ListeEvenementComponent implements OnInit {
   }
 
   deleteEvent(event){
-    const dialogRef = this.dialog.open(SuppressionModalComponent, {
+    const dialogRef = this.dialog.open(DeleteEventComponent, {
       width: '450px',
       data: event
     });
