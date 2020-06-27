@@ -21,6 +21,9 @@ export interface ListeDir {
 })
 export class ListeDirComponent implements OnInit {
   error: string | undefined;
+  success: string ;
+  isAccepted:boolean;
+  isRefused:boolean;
   displayedColumns: string[] = ['id', 'titre', 'dateDebut',  'action'];
   dataSource: MatTableDataSource<ListeEvenement>;
   event;
@@ -54,7 +57,12 @@ export class ListeDirComponent implements OnInit {
   accept(event){
 
     this.httpClient.put('http://localhost:8080/events/accepter',event)
-      .subscribe(result=>{this.event=result},
+      .subscribe(result=>{
+          this.event=result;
+          this.isAccepted=true;
+          this.isRefused=false;
+          //this.success = "Vous avez refusé l'événement "+event.id+" "+event.titre;
+          },
         error1 => { console.log("error",error1);
           this.error = error1.error.message;});
     }
@@ -62,7 +70,13 @@ export class ListeDirComponent implements OnInit {
   refuse(event){
 
     this.httpClient.put('http://localhost:8080/events/refuser',event)
-      .subscribe(result=>{this.event=result},
+      .subscribe(
+        result=>{
+          this.event=result;
+         // this.success = "Vous avez refusé l'événement "+event.id+" "+event.titre;
+          this.isAccepted=false;
+          this.isRefused=true;
+        },
         error1 => { console.log("error",error1);
           this.error = error1.error.message;});
   }

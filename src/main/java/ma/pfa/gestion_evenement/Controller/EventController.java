@@ -41,7 +41,7 @@ public class EventController {
         }
     @PutMapping("/refuser")
     public void updateEventRefuse(@RequestBody Evenement evenement){
-        evenement.setEtat("Refuser");
+        evenement.setEtat("Refusé");
         eventRepository.save(evenement);
 
     }
