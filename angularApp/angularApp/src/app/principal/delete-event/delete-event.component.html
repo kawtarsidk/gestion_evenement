@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+    <p>Voulez vous supprimer l'événement <span style="color : red;"><b>{{data.titre}}</b></span></p>
+   </div>
+   <div mat-dialog-actions>
+     <button mat-button (click)="onNoClick()">Annuler</button>
+     <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Supprimer</button>
+   </div>

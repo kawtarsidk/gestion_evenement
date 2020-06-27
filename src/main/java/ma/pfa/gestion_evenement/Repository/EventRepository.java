@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Date;
 
 public interface EventRepository extends JpaRepository<Evenement,Long> {
-
+public void updateEventAccepted(Evenement event);
+public void updateEventRefused(Evenement event);
 }
 

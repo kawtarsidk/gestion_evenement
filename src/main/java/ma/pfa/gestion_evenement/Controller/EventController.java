@@ -33,4 +33,19 @@ public class EventController {
             eventRepository.save(evenement);
         }
 
+        @PutMapping("/accepter")
+    public void updateEventAccepted(@RequestBody Evenement evenement){
+            evenement.setEtat("Accepté");
+            eventRepository.save(evenement);
+
+        }
+    @PutMapping("/refuser")
+    public void updateEventRefuse(@RequestBody Evenement evenement){
+        evenement.setEtat("Refuser");
+        eventRepository.save(evenement);
+
+    }
+
+
+
     }
