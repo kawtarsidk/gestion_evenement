@@ -1,56 +1,56 @@
 <app-header></app-header>
 <section id="content">
-<div class="row">
-<div class="container_12">
-    <div class="grid_12">
-      <div class="wrap block-3 pad-2">
-              <h1 class="text-center"> Nouveau utilisateur</h1>
-              <form (ngSubmit)="newUser()" [formGroup]="userForm" >
-                <div class="form-group">
-                  <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="cin">CIN</label>
-                    <input type="text" name="cin" class="form-control" id="cin" formControlName="cin" placeholder="cin">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="nom">Nom</label>
-                    <input type="text"  name="nom" class="form-control" id="nom" formControlName="nom" placeholder="Nom">
-                   </div>
-                  </div>
-                   <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="prenom">Prenom</label>
-                      <input type="text" name="prenom" class="form-control" id="prenom" formControlName="prenom" placeholder="prenom">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" formControlName="adresse" placeholder="Address">
-                        </div>
-                  </div>
-                  <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" class="form-control" id="email" formControlName="email" placeholder="Email">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="telephone">Telephone</label>
-                        <input type="text"  name="telephone" class="form-control" id="telephone" formControlName="telephone" placeholder="Telephone">
-                       </div>
-                    </div>
-                  <label for="compte">Compte</label>
-                    <select id="compte"  formControlName="compte" class="form-control">
-                      <option *ngFor="let c of compte" [value]="c.id">{{c.login}}</option>
-                  </select>
-                  <br>
-                <input type="submit" class="btn btn-primary">
-                  <br>
-                  <p *ngIf="isPassed" style="color:green;">{{success}}</p>
-                  <p *ngIf="!isPassed" style="color : red;">{{error}}</p>
+  <div class="row">
+    <div class="container_12">
+      <div class="grid_12">
+        <div class="wrap block-3 pad-2">
+          <h1 class="text-center"> Nouveau utilisateur</h1>
+          <form (ngSubmit)="newUser()" [formGroup]="userForm" >
+            <div class="form-group">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="cin">CIN</label>
+                  <input type="text" name="cin" class="form-control" id="cin" formControlName="cin" placeholder="cin">
                 </div>
-              </form>
-         </div>
+                <div class="form-group col-md-6">
+                  <label for="nom">Nom</label>
+                  <input type="text"  name="nom" class="form-control" id="nom" formControlName="nom" placeholder="Nom">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="prenom">Prenom</label>
+                  <input type="text" name="prenom" class="form-control" id="prenom" formControlName="prenom" placeholder="prenom">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" formControlName="adresse" placeholder="Address">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="telephone">Telephone</label>
+                  <input type="text"  name="telephone" class="form-control" id="telephone" formControlName="telephone" placeholder="Telephone">
+                </div>
+              </div>
+              <label for="compte">Compte</label>
+              <select id="compte"  formControlName="compte" class="form-control">
+                <option *ngFor="let c of compte" [value]="c.id">{{c.login}}</option>
+              </select>
+              <br>
+              <input type="submit" class="btn btn-primary">
+              <br>
+              <p *ngIf="isPassed" style="color:green;">{{success}}</p>
+              <p *ngIf="!isPassed" style="color : red;">{{error}}</p>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
   </div>
 </section>
 <app-footer></app-footer>

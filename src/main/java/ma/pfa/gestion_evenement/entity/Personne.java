@@ -70,5 +70,13 @@ public class Personne {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    public Compte getCompte() {
+        return compte;
+    }
+
+    public void setCompte(Compte compte) {
+        this.compte = compte;
+    }
 }
 
