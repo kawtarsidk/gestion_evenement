@@ -10,7 +10,7 @@ import {Compte} from "../../login/login.component";
 export interface ListeDir {
   id: number;
   titre: string;
-  dateDebut: string;
+  datedebut: string;
 
 }
 
@@ -24,11 +24,13 @@ export class ListeDirComponent implements OnInit {
   success: string ;
   isAccepted:boolean;
   isRefused:boolean;
-  displayedColumns: string[] = ['id', 'titre', 'dateDebut',  'action'];
+  displayedColumns: string[] = ['id', 'titre', 'datedebut',  'action'];
   dataSource: MatTableDataSource<ListeEvenement>;
   event;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
+  clickedAccept  = new Array();
+  clickedRefuse  = new Array();
 
   constructor(private httpClient : HttpClient,public dialog: MatDialog) {
   }
@@ -54,20 +56,22 @@ export class ListeDirComponent implements OnInit {
     }
   }
 
-  accept(event){
-
+  accept(event,i){
+    console.log("event",event,i);
     this.httpClient.put('http://localhost:8080/events/accepter',event)
       .subscribe(result=>{
           this.event=result;
+          this.clickedAccept[i] = true;
+          this.clickedRefuse[i] = true;
           this.isAccepted=true;
-          this.isRefused=false;
+          this.isRefused=false; 
           //this.success = "Vous avez refusé l'événement "+event.id+" "+event.titre;
           },
         error1 => { console.log("error",error1);
           this.error = error1.error.message;});
     }
 
-  refuse(event){
+  refuse(event,i){
 
     this.httpClient.put('http://localhost:8080/events/refuser',event)
       .subscribe(
@@ -76,6 +80,8 @@ export class ListeDirComponent implements OnInit {
          // this.success = "Vous avez refusé l'événement "+event.id+" "+event.titre;
           this.isAccepted=false;
           this.isRefused=true;
+          this.clickedRefuse[i] = true;
+          this.clickedAccept[i] = true;
         },
         error1 => { console.log("error",error1);
           this.error = error1.error.message;});
