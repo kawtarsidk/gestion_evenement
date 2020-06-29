@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ListeEvenement } from '../liste-evenement/liste-evenement.component';
+import { ParticipComponent } from '../particip/particip.component';
+import {  MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-galerie',
@@ -11,7 +13,7 @@ export class GalerieComponent implements OnInit {
 
   listEvenement : ListeEvenement[];
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.httpClient.get('http://localhost:8080/events/get')
@@ -21,8 +23,13 @@ export class GalerieComponent implements OnInit {
     });
   }
 
+
   participer(event){
-    console.log("event",event);
+    //console.log("event",event);
+    this.dialog.open(ParticipComponent, {
+      width: '450px',
+      data: event
+    });
   }
 
 }
