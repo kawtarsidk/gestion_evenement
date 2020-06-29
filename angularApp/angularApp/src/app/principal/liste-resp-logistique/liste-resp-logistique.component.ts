@@ -8,8 +8,8 @@ import {ListeUsers} from "../liste-users/liste-users.component";
 export interface ListeRespLogistique {
   id: number;
   titre: string;
-  salle: string;
-  materiel: string;
+  salle_id: string;
+  equipements: string;
 }
 
 
@@ -19,7 +19,7 @@ export interface ListeRespLogistique {
   styleUrls: ['./liste-resp-logistique.component.scss']
 })
 export class ListeRespLogistiqueComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'titre', 'salle', 'materiel'];
+  displayedColumns: string[] = ['id', 'titre', 'salle_id', 'equipements'];
   dataSource: MatTableDataSource<ListeRespLogistique>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;

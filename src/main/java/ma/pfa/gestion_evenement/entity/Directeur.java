@@ -8,7 +8,7 @@ public class Directeur extends Personne {
     public Directeur() {
     }
 
-    public Directeur(String cin, String nom, String prenom, String mail, String telephone, Compte compte) {
+    public Directeur(String cin, String nom, String prenom, String mail, String telephone, Long compte) {
         super(cin, nom, prenom, mail, telephone, compte);
     }
 

@@ -8,7 +8,7 @@ public class RespoLogistique extends Personne {
     public RespoLogistique() {
     }
 
-    public RespoLogistique(String cin, String nom, String prenom, String mail, String telephone, Compte compte) {
+    public RespoLogistique(String cin, String nom, String prenom, String mail, String telephone, Long compte) {
         super(cin, nom, prenom, mail, telephone, compte);
     }
 }

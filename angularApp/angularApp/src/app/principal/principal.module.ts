@@ -23,6 +23,7 @@ import { ModificationModalComponent } from './modification-modal/modification-mo
 import { SuppressionModalComponent } from './suppression-modal/suppression-modal.component';
 import { UpdateEventComponent } from './update-event/update-event.component';
 import { DeleteEventComponent } from './delete-event/delete-event.component';
+import { GalerieComponent } from './galerie/galerie.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { DeleteEventComponent } from './delete-event/delete-event.component';
     ModificationModalComponent,
     SuppressionModalComponent,
     UpdateEventComponent,
-    DeleteEventComponent
+    DeleteEventComponent,
+    GalerieComponent
   ],
   imports: [
     CommonModule,

@@ -14,7 +14,7 @@ public class Participant extends Personne{
     public Participant() {
     }
 
-    public Participant(String cin, String nom, String prenom, String mail, String telephone, Compte compte) {
+    public Participant(String cin, String nom, String prenom, String mail, String telephone, Long compte) {
         super(cin, nom, prenom, mail, telephone, compte);
     }
 }

@@ -63,4 +63,10 @@ public class Compte {
     public void setPersonne(Personne personne) {
         this.personne = personne;
     }
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+    
+    
 }

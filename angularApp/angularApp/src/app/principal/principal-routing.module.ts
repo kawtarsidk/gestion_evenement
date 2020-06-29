@@ -14,6 +14,7 @@ import { ListeDirComponent } from './liste-dir/liste-dir.component';
 import { ListeRespLogistiqueComponent } from './liste-resp-logistique/liste-resp-logistique.component';
 import { AuthGuardService } from '../login/auth-guard.service';
 import { LoginComponent } from '../login/login.component';
+import { GalerieComponent } from './galerie/galerie.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'liste-users', component : ListeUsersComponent, canActivate : [AuthGuardService]},
   { path: 'liste-dir', component : ListeDirComponent, canActivate : [AuthGuardService]},
   { path: 'liste-resp-logistique', component : ListeRespLogistiqueComponent, canActivate : [AuthGuardService]},
+  { path: 'galerie', component : GalerieComponent, canActivate : [AuthGuardService]},
   { path: '', component: LoginComponent },
   { path: '**', component: LoginComponent },
 ];

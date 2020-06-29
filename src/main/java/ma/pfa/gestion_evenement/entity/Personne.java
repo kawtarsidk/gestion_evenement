@@ -20,13 +20,13 @@ public class Personne {
     public Personne() {
     }
 
-    public Personne(String cin, String nom, String prenom, String mail, String telephone, Compte compte) {
+    public Personne(String cin, String nom, String prenom, String mail, String telephone, Long compte) {
         this.cin = cin;
         this.nom = nom;
         this.prenom = prenom;
         this.mail = mail;
         this.telephone = telephone;
-        this.compte = compte;
+        this.compte.setId(compte);
     }
 
     public Long getId() { return id; }
@@ -69,14 +69,6 @@ public class Personne {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
-    }
-
-    public Compte getCompte() {
-        return compte;
-    }
-
-    public void setCompte(Compte compte) {
-        this.compte = compte;
     }
 }
 

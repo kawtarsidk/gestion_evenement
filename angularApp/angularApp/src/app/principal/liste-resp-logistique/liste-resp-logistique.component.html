@@ -15,14 +15,14 @@
             <td mat-cell *matCellDef="let element"> {{element.titre}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="salle">
+          <ng-container matColumnDef="salle_id">
             <th mat-header-cell *matHeaderCellDef> Salle </th>
-            <td mat-cell *matCellDef="let element"> {{element.salle}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.salle_id}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="materiel">
+          <ng-container matColumnDef="equipements">
             <th mat-header-cell *matHeaderCellDef> Materiels </th>
-            <td mat-cell *matCellDef="let element"> {{element.materiel}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.equipements}} </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

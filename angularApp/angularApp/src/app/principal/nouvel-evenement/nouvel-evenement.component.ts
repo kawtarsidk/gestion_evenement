@@ -17,7 +17,7 @@ export interface Event{
   equipements:string;
   publicConcerne:string;
   //sponsors: string;
-  salle: string;
+  salle_id: string;
   details: string;
 }
 
@@ -84,7 +84,7 @@ export class NouvelEvenementComponent implements OnInit {
       datefin: ['', Validators.required],
       publicConcerne: ['', Validators.required],
       //sponsors: ['', Validators.required],
-      salle: ['', Validators.required],
+      salle_id: ['', Validators.required],
       details: ['', Validators.required],
       equipements: ['', Validators.required],
       etat: "en attente"
