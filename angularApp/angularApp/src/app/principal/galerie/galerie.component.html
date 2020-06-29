@@ -1,0 +1,22 @@
+<app-header></app-header>
+<section id="content">
+  <div class="container_12" >
+    <div class="grid_12" style="top : 10px;">
+        <div class="row my-4">
+            <div class="col-4" *ngFor="let event of listEvenement">
+              <div class="card" style="width: 18rem;" >
+                <img class="card-img-top" src="https://i.ibb.co/bd6LKPh/te-le-chargement.png" alt="Card image cap">
+                <div class="card-body" >
+                  <h5 class="card-title">{{event.titre}} | {{event.datedebut}}</h5>
+                  <p class="card-text">{{event.details}}</p>
+                  <a href (click)="participer(event)" class="btn btn-primary">Participer</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="clear"></div>
+ 
+  </div>
+</section>
+<app-footer></app-footer>

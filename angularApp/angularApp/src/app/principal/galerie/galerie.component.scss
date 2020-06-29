@@ -1,0 +1,51 @@
+.colaps {
+    font-family: fantasy;
+    font-size: 12px;
+    color: steelblue;
+  }
+  
+  .short {
+    -webkit-line-clamp: 3;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    opacity: 0.8;
+    font-family: "Lucida Grande";
+    padding-top: 5px;
+  }
+  
+  .logo{
+    height: 50px;
+    margin-bottom: 0 !important;
+    width: 60px;
+  }
+  
+  .nav-link{
+    color: white !important;
+  }
+  
+  
+  p{
+    @extend .short;
+  }
+  
+  .container{
+    padding: 40px 0;
+    min-height: 500px;
+  }
+  
+  .image{
+    width: 50%;
+    height: 25%;
+    img{
+      width: 50%;
+      height: 25%;
+      border-radius: 4px;
+    }
+  }
+  
+  
