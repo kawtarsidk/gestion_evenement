@@ -4,7 +4,9 @@
 <div class="container_12">
     <div class="grid_12">
       <div class="wrap block-3 pad-2">
+        <br><br>
               <h1 class="text-center"> Nouvel Evenement</h1>
+        <br>
               <form (ngSubmit)="newEvent()" [formGroup]="eventForm">
                 <div class="form-group">
 
@@ -13,7 +15,7 @@
                     <label for="titre">titre</label>
                     <input type="text" name="titre" formControlName="titre" class="form-control" id="titre" placeholder="titre">
                   </div>
-          
+
                    <div class="form-group col-md-6">
                         <label for="type">Type</label>
                       <select id="type" formControlName="theme" placeholder="type" class="form-control">
@@ -58,7 +60,7 @@
                      </div>
                    </div>
                    <!--  <div class="form-row">
-                     
+
                    <div class="form-group col-md-6">
                        <label for="sponsors">Sponsors</label>
                        <input type="text" formControlName="sponsors" class="form-control" id="sponsors" placeholder="sponsors">

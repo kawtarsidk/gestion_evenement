@@ -17,5 +17,4 @@ export class ParticipComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }
